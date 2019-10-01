@@ -9,5 +9,7 @@
 import Foundation
 
 class SignUpService {
-    
+    func signUp(username: String, password: String, name: String, birthdate: String) -> User? {
+        return nil
+    }
 }

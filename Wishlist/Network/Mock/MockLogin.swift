@@ -8,8 +8,8 @@
 
 import Foundation
 
-class MockLogIn: LogInNetworkProtocol {
-    func logIn(username: String, password: String) throws -> User {
+class MockLogin: LoginNetworkProtocol {
+    func login(username: String, password: String) throws -> User {
         let s = DispatchSemaphore(value: 0)
         _ = s.wait(timeout: .now() + 1.0)
         return MockData.users.authenticatedUser

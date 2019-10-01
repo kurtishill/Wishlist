@@ -8,16 +8,16 @@
 
 import Foundation
 
-class LogInService {
-    let logInNetwork: LogInNetworkProtocol
+class LoginService {
+    let loginNetwork: LoginNetworkProtocol
     
-    init(logInNetwork: LogInNetworkProtocol) {
-        self.logInNetwork = logInNetwork
+    init(loginNetwork: LoginNetworkProtocol) {
+        self.loginNetwork = loginNetwork
     }
     
-    func logIn(username: String, password: String) -> User? {
+    func login(username: String, password: String) -> User? {
         do {
-            let user = try logInNetwork.logIn(username: username, password: password)
+            let user = try loginNetwork.login(username: username, password: password)
             return user
         } catch {
             print("Error: ", error)

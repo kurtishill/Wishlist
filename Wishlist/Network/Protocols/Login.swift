@@ -8,6 +8,6 @@
 
 import Foundation
 
-protocol LogInNetworkProtocol {
-    func logIn(username: String, password: String) throws -> User
+protocol LoginNetworkProtocol {
+    func login(username: String, password: String) throws -> User
 }
