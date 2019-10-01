@@ -46,7 +46,15 @@ class AuthViewModel: ObservableObject {
             self.birthdateHasError = !self.birthdateIsValid(data["birthdate"] as! String)
         }
         
-        if self.usernameHasError || self.passwordHasError || self.nameHasError || self.birthdateHasError {
+        if self.usernameHasError ||
+            self.passwordHasError ||
+            (
+                self.state is SignUpState &&
+                (
+                    self.nameHasError ||
+                    self.birthdateHasError
+                )
+            )  {
             self.isAuthenticating = false
             return
         }
