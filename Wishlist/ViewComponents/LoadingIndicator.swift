@@ -13,9 +13,9 @@ struct LoadingIndicator: View {
     @State private var colorIndex = 0
     @State private var colors: [Color] = [
         AssetColors.primaryColor,
-        AssetColors.accentColor2,
+        AssetColors.warningColor,
         AssetColors.darkPrimaryColor,
-        AssetColors.accentColor3
+        AssetColors.accentColor2
     ]
     
     let duration = 0.8

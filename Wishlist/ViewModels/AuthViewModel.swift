@@ -16,6 +16,11 @@ class AuthViewModel: ObservableObject {
     @Published var isAuthenticating: Bool = false
     @Published var isAuthenticated: Int? = 0
     
+    @Published var usernameHasError: Bool = false
+    @Published var passwordHasError: Bool = false
+    @Published var nameHasError: Bool = false
+    @Published var birthdateHasError: Bool = false
+    
     @Published var state: AuthState
     
     init() {
@@ -33,6 +38,19 @@ class AuthViewModel: ObservableObject {
     func authenticate(data: [String : Any]) {
         self.isAuthenticating = true
         
+        self.usernameHasError = !self.usernameIsValid(data["username"] as! String)
+        self.passwordHasError = !self.passwordIsValid(data["password"] as! String)
+        
+        if self.state is SignUpState {
+            self.nameHasError = !self.nameIsValid(data["name"] as! String)
+            self.birthdateHasError = !self.birthdateIsValid(data["birthdate"] as! String)
+        }
+        
+        if self.usernameHasError || self.passwordHasError || self.nameHasError || self.birthdateHasError {
+            self.isAuthenticating = false
+            return
+        }
+        
         self.state.authenticate(data: data) { user in
             DispatchQueue.main.async {
                 self.isAuthenticating = false
@@ -45,5 +63,23 @@ class AuthViewModel: ObservableObject {
                 }
             }
         }
+    }
+    
+    private func usernameIsValid(_ username: String) -> Bool {
+        return !username.isEmpty
+    }
+    
+    private func passwordIsValid(_ password: String) -> Bool {
+        return !password.isEmpty
+    }
+    
+    private func nameIsValid(_ name: String) -> Bool {
+        return !name.isEmpty
+    }
+    
+    private func birthdateIsValid(_ birthdate: String) -> Bool {
+        let dateFormatter = DateFormatter()
+        let date = dateFormatter.date(from: birthdate) ?? Date()
+        return date < Date() && !birthdate.isEmpty
     }
 }

@@ -14,6 +14,7 @@ class SignUpService {
     init(signUpNetwork: SignUpNetworkProtocol) {
         self.signUpNetwork = signUpNetwork
     }
+    
     func signUp(username: String, password: String, name: String, birthdate: String) -> User? {
         do {
             let user = try signUpNetwork.signUp(username: username, password: password, name: name, birthdate: birthdate)

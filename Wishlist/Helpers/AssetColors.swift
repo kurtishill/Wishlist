@@ -14,6 +14,6 @@ struct AssetColors {
     static let accentColor = Color("salmon")
     static let lightPrimaryColor = Color("lightBlue")
     static let darkPrimaryColor = Color("charcoalPurple")
-    static let accentColor2 = Color("dullYellow")
-    static let accentColor3 = Color("tan")
+    static let warningColor = Color("dullYellow")
+    static let accentColor2 = Color("tan")
 }

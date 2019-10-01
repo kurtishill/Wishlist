@@ -32,7 +32,7 @@ struct AuthFormView: View {
                 TextField("username", text: self.$username)
                     .frame(height: componentSize)
                     .padding(.leading, 10)
-                    .background(Color.gray.opacity(0.2))
+                    .background(self.authVM.usernameHasError ? AssetColors.warningColor : Color.gray.opacity(0.2))
                     .cornerRadius(10)
                     .font(.custom(AssetsFonts.primaryFont, size: 15))
                     .foregroundColor(.black)
@@ -40,7 +40,7 @@ struct AuthFormView: View {
                 SecureField("password", text: self.$password)
                     .frame(height: componentSize)
                     .padding(.leading, 10)
-                    .background(Color.gray.opacity(0.2))
+                    .background(self.authVM.passwordHasError ? AssetColors.warningColor : Color.gray.opacity(0.2))
                     .cornerRadius(10)
                     .font(.custom(AssetsFonts.primaryFont, size: 15))
                     .foregroundColor(.black)
@@ -49,7 +49,7 @@ struct AuthFormView: View {
                     TextField("name", text: self.$name)
                         .frame(height: componentSize)
                         .padding(.leading, 10)
-                        .background(Color.gray.opacity(0.2))
+                        .background(self.authVM.nameHasError ? AssetColors.warningColor : Color.gray.opacity(0.2))
                         .cornerRadius(10)
                         .font(.custom(AssetsFonts.primaryFont, size: 15))
                         .foregroundColor(.black)
@@ -59,7 +59,7 @@ struct AuthFormView: View {
                     }) {
                         RoundedRectangle(cornerRadius: 10)
                             .frame(height: componentSize)
-                            .foregroundColor(Color.gray.opacity(0.2))
+                            .foregroundColor(self.authVM.birthdateHasError ? AssetColors.warningColor : Color.gray.opacity(0.2))
                             .overlay(
                                 HStack {
                                     Text(self.birthdateString == "" ? "date of birth" : self.birthdateString)
