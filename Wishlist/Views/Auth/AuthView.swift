@@ -56,36 +56,39 @@ struct PageContent: View {
                     }.animation(.spring())
                 }.padding(.leading, 20)
                 
-                RoundedRectangle(cornerRadius: 10)
-                    .frame(width: nil, height:
-                        sidePadding +
-                            (componentSize * (self.authVM.state is LoginState ? 3 : 5)) +
-                            (spacePadding * (self.authVM.state is LoginState ? 2 : 4)) +
-                        sidePadding
-                    )
-                    .animation(.spring())
-                    .padding(.all, 20)
-                    .foregroundColor(.white)
-                    .shadow(radius: 14)
-                    .overlay(
-                        VStack {
-                            AuthFormView(authVM: self.authVM,
-                                         birthdate: self.$birthdate,
-                                         birthdateString: self.$birthdateString,
-                                         datePickerShowing: self.$datePickerShowing,
-                                         spacePadding: spacePadding,
-                                         componentSize: componentSize
+                ZStack {
+                    RoundedRectangle(cornerRadius: 10)
+                        .frame(width: nil, height:
+                            sidePadding +
+                                (componentSize * (self.authVM.state is LoginState ? 3 : 5)) +
+                                (spacePadding * (self.authVM.state is LoginState ? 2 : 4)) +
+                            sidePadding
+                        )
+                        .animation(.spring())
+                        .padding(.all, 20)
+                        .foregroundColor(.white)
+                        .shadow(radius: 14)
+                    
+                    VStack {
+                        AuthFormView(authVM: self.authVM,
+                                     birthdate: self.$birthdate,
+                                     birthdateString: self.$birthdateString,
+                                     datePickerShowing: self.$datePickerShowing,
+                                     spacePadding: spacePadding,
+                                     componentSize: componentSize
                             )
-                                .padding(.init(top: sidePadding * 2, leading: sidePadding * 2, bottom: 0, trailing: sidePadding * 2))
-                            Spacer()
-                        }
-                )
+                            .padding(.init(top: sidePadding * 2, leading: sidePadding * 2, bottom: 0, trailing: sidePadding * 2))
+                        Spacer()
+                    }
+                }
                 
                 HStack {
                     Spacer()
                     Text(self.authVM.state is LoginState ? "Don't have an account? " : "Already have an account? ")
                     Button(action: {
-                        self.authVM.toggleState()
+                        if !self.authVM.isAuthenticating {
+                            self.authVM.toggleState()
+                        }
                     }) {
                         Text(self.authVM.state is LoginState ? "Sign up" : "Log in")
                             .foregroundColor(AssetColors.darkPrimaryColor)

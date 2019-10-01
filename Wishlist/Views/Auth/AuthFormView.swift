@@ -71,38 +71,59 @@ struct AuthFormView: View {
                         )
                     }
                 }
+            }.animation(.spring())
+            
+            ZStack {
+                AuthenticateButton(authVM: self.authVM,
+                                   username: self.$username,
+                                   password: self.$password,
+                                   name: self.$name,
+                                   birthdateString: self.$birthdateString,
+                                   componentSize: self.componentSize
+                ).animation(.spring())
                 
-                NavigationLink(destination: HomeView(), tag: 1, selection: self.$authVM.isAuthenticated) {
-                    Button(action: {
-                        if !self.authVM.isAuthenticating {
-                            self.authVM.authenticate(
-                                data: [
-                                    "username": self.username,
-                                    "password": self.password,
-                                    "name": self.name,
-                                    "birthdate": self.birthdateString
-                                ]
-                            )
-                        }
-                    }) {
-                        RoundedRectangle(cornerRadius: 10)
-                            .frame(width: nil, height: componentSize)
-                            .foregroundColor(self.authVM.state is LoginState ? AssetColors.accentColor : .white)
-                            .shadow(radius: 4)
-                            .overlay(
-                                HStack(alignment: .center, spacing: 20) {
-                                    if self.authVM.isAuthenticating {
-                                        LoadingIndicator()
-                                    }
-                                    
-                                    Text(self.authVM.state is LoginState ? "Log in" : "Sign up")
-                                        .foregroundColor(self.authVM.state is LoginState ? .white : AssetColors.accentColor)
-                                        .font(.custom("Montserrat-Medium", size: 20))
-                                        .animation(.spring())
-                                }
-                        )
+                HStack(alignment: .center, spacing: 20) {
+                    if self.authVM.isAuthenticating {
+                        LoadingIndicator()
                     }
+                    
+                    Text(self.authVM.state is LoginState ? "Log in" : "Sign up")
+                        .foregroundColor(self.authVM.state is LoginState ? .white : AssetColors.accentColor)
+                        .font(.custom("Montserrat-Medium", size: 20))
+                        .animation(.spring())
                 }
+            }
+        }
+    }
+}
+
+struct AuthenticateButton: View {
+    @ObservedObject var authVM: AuthViewModel
+    @Binding var username: String
+    @Binding var password: String
+    @Binding var name: String
+    @Binding var birthdateString: String
+    
+    let componentSize: CGFloat
+    
+    var body: some View {
+        NavigationLink(destination: HomeView(), tag: 1, selection: self.$authVM.isAuthenticated) {
+            Button(action: {
+                if !self.authVM.isAuthenticating {
+                    self.authVM.authenticate(
+                        data: [
+                            "username": self.username,
+                            "password": self.password,
+                            "name": self.name,
+                            "birthdate": self.birthdateString
+                        ]
+                    )
+                }
+            }) {
+                RoundedRectangle(cornerRadius: 10)
+                    .frame(height: componentSize)
+                    .foregroundColor(self.authVM.state is LoginState ? AssetColors.accentColor : .white)
+                    .shadow(radius: 4)
             }
         }
     }
