@@ -36,7 +36,7 @@ struct HomeView: View {
                     menuButton
                     Spacer()
                     Text("Wishlist")
-                        .font(.custom("Montserrat-Medium", size: 20))
+                        .font(.custom(AssetsFonts.primaryFont, size: 20))
                     Spacer()
                     shareButton
                 }.padding(.trailing, 20)

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0A0118242343C62C00AEC9FE /* AssetFonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A0118232343C62C00AEC9FE /* AssetFonts.swift */; };
 		0A482AE023404F74003FB54B /* BottomFab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A482ADF23404F74003FB54B /* BottomFab.swift */; };
 		0A482AE223405021003FB54B /* YourWishlistView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A482AE123405021003FB54B /* YourWishlistView.swift */; };
 		0A482AE4234051FD003FB54B /* YourWishlistViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A482AE3234051FD003FB54B /* YourWishlistViewModel.swift */; };
@@ -44,6 +45,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0A0118232343C62C00AEC9FE /* AssetFonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetFonts.swift; sourceTree = "<group>"; };
 		0A482ADF23404F74003FB54B /* BottomFab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomFab.swift; sourceTree = "<group>"; };
 		0A482AE123405021003FB54B /* YourWishlistView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YourWishlistView.swift; sourceTree = "<group>"; };
 		0A482AE3234051FD003FB54B /* YourWishlistViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YourWishlistViewModel.swift; sourceTree = "<group>"; };
@@ -199,6 +201,7 @@
 			children = (
 				0AAAFC31233FB4BB00059F07 /* AssetColors.swift */,
 				0AAAFC4C233FC21100059F07 /* MockData.swift */,
+				0A0118232343C62C00AEC9FE /* AssetFonts.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -375,6 +378,7 @@
 				0AAAFC48233FC10E00059F07 /* MockLogin.swift in Sources */,
 				0AAAFC4F23403DCD00059F07 /* Item.swift in Sources */,
 				0AAAFC55234040AB00059F07 /* CreateItemService.swift in Sources */,
+				0A0118242343C62C00AEC9FE /* AssetFonts.swift in Sources */,
 				0A482AF62342B440003FB54B /* AuthFormView.swift in Sources */,
 				0A482AFE2342B581003FB54B /* SignUpState.swift in Sources */,
 				0A4F1B0A233D824700546749 /* SceneDelegate.swift in Sources */,

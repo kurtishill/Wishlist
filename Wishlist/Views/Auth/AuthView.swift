@@ -52,7 +52,7 @@ struct PageContent: View {
                             .foregroundColor(AssetColors.accentColor)
                         Text("Wishlist")
                             .foregroundColor(.black)
-                            .font(.custom("Montserrat-Medium", size: 40))
+                            .font(.custom(AssetsFonts.primaryFont, size: 40))
                     }.animation(.spring())
                 }.padding(.leading, 20)
                 
@@ -129,7 +129,7 @@ struct DatePickerView: View {
                     self.birthdateString = dateFormatter.string(from: self.birthdate)
                 }) {
                     Text("Done")
-                        .font(.custom("Montserrat-Medium", size: 15))
+                        .font(.custom(AssetsFonts.primaryFont, size: 15))
                         .foregroundColor(.black)
                 }
             }.padding(.trailing, 20)

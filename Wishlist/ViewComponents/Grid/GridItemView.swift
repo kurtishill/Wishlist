@@ -35,13 +35,15 @@ struct GridItemView: View {
                     
                     HStack {
                         VStack(alignment: .leading) {
+                            Spacer()
                             Text(self.item.name)
-                                .font(.custom("Montserrat-Medium", size: 25))
+                                .font(.custom(AssetsFonts.primaryFont, size: 25))
                                 .minimumScaleFactor(0.5)
                             Text("$\(self.item.price)")
-                                .font(.custom("Montserrat-Medium", size: 15))
+                                .font(.custom(AssetsFonts.primaryFont, size: 15))
                                 .foregroundColor(.gray)
                                 .minimumScaleFactor(0.5)
+                            Spacer()
                         }
                         
                         Spacer()

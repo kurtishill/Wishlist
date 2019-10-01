@@ -34,7 +34,7 @@ struct AuthFormView: View {
                     .padding(.leading, 10)
                     .background(Color.gray.opacity(0.2))
                     .cornerRadius(10)
-                    .font(.custom("Montserrat-Medium", size: 15))
+                    .font(.custom(AssetsFonts.primaryFont, size: 15))
                     .foregroundColor(.black)
                 
                 SecureField("password", text: self.$password)
@@ -42,7 +42,7 @@ struct AuthFormView: View {
                     .padding(.leading, 10)
                     .background(Color.gray.opacity(0.2))
                     .cornerRadius(10)
-                    .font(.custom("Montserrat-Medium", size: 15))
+                    .font(.custom(AssetsFonts.primaryFont, size: 15))
                     .foregroundColor(.black)
                 
                 if self.authVM.state is SignUpState {
@@ -51,7 +51,7 @@ struct AuthFormView: View {
                         .padding(.leading, 10)
                         .background(Color.gray.opacity(0.2))
                         .cornerRadius(10)
-                        .font(.custom("Montserrat-Medium", size: 15))
+                        .font(.custom(AssetsFonts.primaryFont, size: 15))
                         .foregroundColor(.black)
                     
                     Button(action: {
@@ -64,7 +64,7 @@ struct AuthFormView: View {
                                 HStack {
                                     Text(self.birthdateString == "" ? "date of birth" : self.birthdateString)
                                         .foregroundColor(self.birthdateString == "" ? Color.gray.opacity(0.5) : .black)
-                                        .font(.custom("Montserrat-Medium", size: 15))
+                                        .font(.custom(AssetsFonts.primaryFont, size: 15))
                                         .padding(.leading, 10)
                                     Spacer()
                                 }
@@ -89,7 +89,7 @@ struct AuthFormView: View {
                     
                     Text(self.authVM.state is LoginState ? "Log in" : "Sign up")
                         .foregroundColor(self.authVM.state is LoginState ? .white : AssetColors.accentColor)
-                        .font(.custom("Montserrat-Medium", size: 20))
+                        .font(.custom(AssetsFonts.primaryFont, size: 20))
                         .animation(.spring())
                 }
             }
