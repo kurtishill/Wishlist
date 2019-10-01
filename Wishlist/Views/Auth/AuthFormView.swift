@@ -91,6 +91,7 @@ struct AuthFormView: View {
                         .foregroundColor(self.authVM.state is LoginState ? .white : AssetColors.accentColor)
                         .font(.custom(AssetsFonts.primaryFont, size: 20))
                         .animation(.spring())
+                        .contentShape(NoHitShape())
                 }
             }
         }
@@ -126,6 +127,12 @@ struct AuthenticateButton: View {
                     .shadow(radius: 4)
             }
         }
+    }
+}
+
+struct NoHitShape : Shape {
+    func path(in rect: CGRect) -> Path {
+        return Path(CGRect(x: 0, y: 0, width: 0, height: 0))
     }
 }
 

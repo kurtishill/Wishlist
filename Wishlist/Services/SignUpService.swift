@@ -9,7 +9,18 @@
 import Foundation
 
 class SignUpService {
+    let signUpNetwork: SignUpNetworkProtocol
+    
+    init(signUpNetwork: SignUpNetworkProtocol) {
+        self.signUpNetwork = signUpNetwork
+    }
     func signUp(username: String, password: String, name: String, birthdate: String) -> User? {
-        return nil
+        do {
+            let user = try signUpNetwork.signUp(username: username, password: password, name: name, birthdate: birthdate)
+            return user
+        } catch {
+            print("Error: ", error)
+            return nil
+        }
     }
 }

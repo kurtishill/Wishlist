@@ -18,10 +18,10 @@ class AuthViewModel: ObservableObject {
     
     @Published var state: AuthState
     
-    init(loginService: LoginService, signUpService: SignUpService) {
-        self.loginService = loginService
-        self.signUpService = signUpService
-        self.state = LoginState(loginService: loginService)
+    init() {
+        self.loginService = LoginService(loginNetwork: MockLogin())
+        self.signUpService = SignUpService(signUpNetwork: MockSignUp())
+        self.state = LoginState(loginService: self.loginService)
     }
     
     func toggleState() {

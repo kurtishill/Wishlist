@@ -13,10 +13,7 @@ fileprivate let componentSize: CGFloat = 50
 fileprivate let spacePadding: CGFloat = 30
 
 struct AuthView: View {
-    var authVM: AuthViewModel = AuthViewModel(
-        loginService: LoginService(loginNetwork: MockLogin()),
-        signUpService: SignUpService()
-    )
+    var authVM: AuthViewModel = AuthViewModel()
     
     var body: some View {
         NavigationView {

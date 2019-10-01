@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		0A0118242343C62C00AEC9FE /* AssetFonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A0118232343C62C00AEC9FE /* AssetFonts.swift */; };
+		0A0118262343F46F00AEC9FE /* SignUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A0118252343F46F00AEC9FE /* SignUp.swift */; };
+		0A0118282343F72A00AEC9FE /* MockSignUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A0118272343F72A00AEC9FE /* MockSignUp.swift */; };
 		0A482AE023404F74003FB54B /* BottomFab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A482ADF23404F74003FB54B /* BottomFab.swift */; };
 		0A482AE223405021003FB54B /* YourWishlistView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A482AE123405021003FB54B /* YourWishlistView.swift */; };
 		0A482AE4234051FD003FB54B /* YourWishlistViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A482AE3234051FD003FB54B /* YourWishlistViewModel.swift */; };
@@ -46,6 +48,8 @@
 
 /* Begin PBXFileReference section */
 		0A0118232343C62C00AEC9FE /* AssetFonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetFonts.swift; sourceTree = "<group>"; };
+		0A0118252343F46F00AEC9FE /* SignUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUp.swift; sourceTree = "<group>"; };
+		0A0118272343F72A00AEC9FE /* MockSignUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockSignUp.swift; sourceTree = "<group>"; };
 		0A482ADF23404F74003FB54B /* BottomFab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomFab.swift; sourceTree = "<group>"; };
 		0A482AE123405021003FB54B /* YourWishlistView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YourWishlistView.swift; sourceTree = "<group>"; };
 		0A482AE3234051FD003FB54B /* YourWishlistViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YourWishlistViewModel.swift; sourceTree = "<group>"; };
@@ -242,6 +246,7 @@
 			children = (
 				0AAAFC47233FC10E00059F07 /* MockLogin.swift */,
 				0AAAFC5223403F8800059F07 /* MockCreateItem.swift */,
+				0A0118272343F72A00AEC9FE /* MockSignUp.swift */,
 			);
 			path = Mock;
 			sourceTree = "<group>";
@@ -269,6 +274,7 @@
 			children = (
 				0AAAFC43233FC09400059F07 /* Login.swift */,
 				0AAAFC5023403F1100059F07 /* CreateItem.swift */,
+				0A0118252343F46F00AEC9FE /* SignUp.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -389,8 +395,10 @@
 				0A482AFC2342B56F003FB54B /* LoginState.swift in Sources */,
 				0AAAFC32233FB4BB00059F07 /* AssetColors.swift in Sources */,
 				0A9E91BD233E96360077CF5C /* AuthView.swift in Sources */,
+				0A0118282343F72A00AEC9FE /* MockSignUp.swift in Sources */,
 				0AAAFC5123403F1100059F07 /* CreateItem.swift in Sources */,
 				0A482AFA2342B527003FB54B /* AuthState.swift in Sources */,
+				0A0118262343F46F00AEC9FE /* SignUp.swift in Sources */,
 				0A4F1B0C233D824700546749 /* HomeView.swift in Sources */,
 				0A9E91BB233E95BD0077CF5C /* GridItemView.swift in Sources */,
 			);
