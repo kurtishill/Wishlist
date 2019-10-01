@@ -79,6 +79,7 @@ class AuthViewModel: ObservableObject {
     
     private func birthdateIsValid(_ birthdate: String) -> Bool {
         let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "MM/dd/yyyy"
         let date = dateFormatter.date(from: birthdate) ?? Date()
         return date < Date() && !birthdate.isEmpty
     }
