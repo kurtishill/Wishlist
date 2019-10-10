@@ -9,7 +9,7 @@
 import SwiftUI
 
 struct HomeView: View {
-    var menuButton: some View {
+    var logoutButton: some View {
         Button(action: {
             
         }) {
@@ -31,7 +31,7 @@ struct HomeView: View {
         VStack {
             Group {
                 HStack {
-                    menuButton
+                    logoutButton
                     Spacer()
                     Text("Wishlist")
                         .font(.custom(AssetsFonts.primaryFont, size: 20))

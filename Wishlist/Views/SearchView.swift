@@ -10,6 +10,8 @@ import SwiftUI
 import UIKit
 
 struct SearchView: View {
+    @ObservedObject var searchVM: SearchViewModel = SearchViewModel()
+    
     @State var searchableString: String = ""
     
     var body: some View {
@@ -24,7 +26,7 @@ struct SearchView: View {
             HStack(spacing: 15) {
                 SearchBar(searchableString: self.$searchableString)
                 Button(action: {
-                    
+                    // TODO call method on searchVM
                 }) {
                     Circle()
                         .frame(width: 50, height: 50)
@@ -35,6 +37,8 @@ struct SearchView: View {
                         )
                 }
             }
+            
+            GridView(wishlist: Wishlist(items: []))
             
             Spacer()
         }.padding(.all, 20)
