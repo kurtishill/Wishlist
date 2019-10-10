@@ -21,7 +21,20 @@ struct SearchView: View {
                 Spacer()
             }
             
-            SearchBar(searchableString: self.$searchableString)
+            HStack(spacing: 15) {
+                SearchBar(searchableString: self.$searchableString)
+                Button(action: {
+                    
+                }) {
+                    Circle()
+                        .frame(width: 50, height: 50)
+                        .foregroundColor(AssetColors.accentColor)
+                        .overlay(
+                            Image(systemName: "arrow.right")
+                                .foregroundColor(.white)
+                        )
+                }
+            }
             
             Spacer()
         }.padding(.all, 20)
