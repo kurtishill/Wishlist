@@ -21,6 +21,14 @@ struct SearchView: View {
                     .font(.custom(AssetsFonts.primaryFont, size: 30))
                 
                 Spacer()
+                
+                Button(action: {
+                    
+                }) {
+                    Text("Add")
+                        .font(.custom(AssetsFonts.primaryFont, size: 17))
+                        .foregroundColor(AssetColors.accentColor)
+                }
             }
             
             HStack(spacing: 15) {
