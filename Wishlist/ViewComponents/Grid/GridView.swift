@@ -8,21 +8,15 @@
 
 import SwiftUI
 
-struct GridView: View {    
+struct GridView: View {
     let numColumns: Int = 2
-    let wishlist: Wishlist /*= Wishlist(id: "1", items: [
-        Item(id: "1", name: "Gift 1", price: 150.00, photo: "", url: ""),
-        Item(id: "2", name: "Gift 2", price: 200.00, photo: "", url: ""),
-        Item(id: "3", name: "Gift 3", price: 100.00, photo: "", url: ""),
-        Item(id: "4", name: "Gift 4", price: 50.00, photo: "", url: ""),
-        Item(id: "5", name: "Gift 5", price: 75.00, photo: "", url: "")
-    ])*/
+    let items: [Item]
     
     var body: some View {
         let width = UIScreen.main.bounds.width / CGFloat(self.numColumns) - 30
         let height = UIScreen.main.bounds.width / CGFloat(self.numColumns) + 10
         
-        let chunked = wishlist.items.chunked(into: self.numColumns)
+        let chunked = items.chunked(into: self.numColumns)
         
         return ScrollView(.vertical, showsIndicators: false) {
             VStack(alignment: .center, spacing: 15) {

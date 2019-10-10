@@ -15,7 +15,7 @@ struct YourWishlistView: View {
     
     var body: some View {
         ZStack {
-            GridView(wishlist: Wishlist(items: []))
+            GridView(items: [])
             BottomFab {
                 self.showSearchView.toggle()
             }.sheet(isPresented: self.$showSearchView) {

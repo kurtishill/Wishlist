@@ -12,6 +12,7 @@ struct GridItemView: View {
     var item: Item
     var gridWidth: CGFloat
     var gridHeight: CGFloat
+    
     var body: some View {
         ZStack {
             RoundedRectangle(cornerRadius: 7)
@@ -20,13 +21,15 @@ struct GridItemView: View {
                 .shadow(color: Color("lightBlue"), radius: 8, x: 0, y: 0)
             GeometryReader { geometry in
                 VStack {
-                    HStack {
-                        Spacer()
-                        Image(systemName: "heart.fill")
-                            .resizable()
-                            .frame(width: 20, height: 20)
-                            .foregroundColor(Color("salmon"))
-                    }
+//                    HStack {
+//                        Spacer()
+//                        Image(systemName: "heart.fill")
+//                            .resizable()
+//                            .frame(width: 20, height: 20)
+//                            .foregroundColor(Color("salmon"))
+//                    }
+                    
+                    Spacer()
                     
                     Image(systemName: "gift.fill")
                         .resizable()
@@ -48,10 +51,10 @@ struct GridItemView: View {
                         
                         Spacer()
                         
-                        Image(systemName: "checkmark.circle.fill")
-                            .resizable()
-                            .frame(width: 20, height: 20)
-                            .foregroundColor(Color("darkDullBlue"))
+//                        Image(systemName: "checkmark.circle.fill")
+//                            .resizable()
+//                            .frame(width: 20, height: 20)
+//                            .foregroundColor(Color("darkDullBlue"))
                     }
                 }.padding(.all, 15)
             }

@@ -24,35 +24,46 @@ struct SearchView: View {
             }
             
             HStack(spacing: 15) {
-                SearchBar(searchableString: self.$searchableString)
+                SearchBar(
+                    searchableString: self.$searchableString,
+                    searchBarError: self.$searchVM.searchBarError
+                )
                 Button(action: {
-                    // TODO call method on searchVM
+                    if !self.searchVM.isLoading {
+                        self.searchVM.search(for: self.searchableString)
+                    }
                 }) {
-                    Circle()
-                        .frame(width: 50, height: 50)
-                        .foregroundColor(AssetColors.accentColor)
-                        .overlay(
+                    ZStack {
+                        Circle()
+                            .frame(width: 50, height: 50)
+                            .foregroundColor(AssetColors.accentColor)
+                        
+                        if self.searchVM.isLoading {
+                            LoadingIndicator()
+                        } else {
                             Image(systemName: "arrow.right")
                                 .foregroundColor(.white)
-                        )
+                        }
+                    }
                 }
             }
             
-            GridView(wishlist: Wishlist(items: []))
+            GridView(items: self.searchVM.items)
             
-            Spacer()
-        }.padding(.all, 20)
+        }.padding(.all, 10)
+            .edgesIgnoringSafeArea(.all)
     }
 }
 
 struct SearchBar: View {
     @Binding var searchableString: String
+    @Binding var searchBarError: Bool
     
     var body: some View {
         TextField("Search", text: self.$searchableString)
         .frame(height: 50)
         .padding(.leading, 30)
-        .background(Color.gray.opacity(0.2))
+        .background(self.searchBarError ? AssetColors.warningColor : Color.gray.opacity(0.2))
         .mask(RoundedRectangle(cornerRadius: 7))
         .font(.custom(AssetsFonts.primaryFont, size: 17))
         .overlay(HStack {
