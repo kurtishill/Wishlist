@@ -9,13 +9,15 @@
 import SwiftUI
 
 struct BottomFab: View {
+    var action: () -> Void
+    
     var body: some View {
         VStack {
             Spacer()
             HStack {
                 Spacer()
                 Button(action: {
-                    
+                    self.action()
                 }) {
                     Circle()
                         .frame(width: 70, height: 70)
@@ -29,8 +31,8 @@ struct BottomFab: View {
                     )
                 }
             }
-        }.padding(.trailing, 20)
-            .padding(.bottom, 20)
+        }.padding(.trailing, 30)
+            .padding(.bottom, 30)
     }
 }
 

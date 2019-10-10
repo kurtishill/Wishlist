@@ -27,15 +27,6 @@ struct HomeView: View {
         }
     }
     
-    var searchButton: some View {
-        Button(action: {
-            
-        }) {
-            Image(systemName: "magnifyingglass")
-                .foregroundColor(.black)
-        }
-    }
-    
     var body: some View {
         VStack {
             Group {
@@ -45,8 +36,6 @@ struct HomeView: View {
                     Text("Wishlist")
                         .font(.custom(AssetsFonts.primaryFont, size: 20))
                     Spacer()
-                    searchButton
-                        .padding(.trailing, 15)
                     shareButton
                 }.padding(.trailing, 20)
                     .padding(.leading, 20)

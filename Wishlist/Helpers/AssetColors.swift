@@ -16,4 +16,5 @@ struct AssetColors {
     static let darkPrimaryColor = Color("charcoalPurple")
     static let warningColor = Color("dullYellow")
     static let accentColor2 = Color("tan")
+    static let searchBarColor = Color("searchBar")
 }

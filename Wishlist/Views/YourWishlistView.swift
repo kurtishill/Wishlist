@@ -11,10 +11,16 @@ import SwiftUI
 struct YourWishlistView: View {
     @ObservedObject var yourWishlistVM: YourWishlistViewModel = YourWishlistViewModel()
     
+    @State var showSearchView: Bool = false
+    
     var body: some View {
         ZStack {
             GridView()
-            BottomFab()
+            BottomFab {
+                self.showSearchView.toggle()
+            }.sheet(isPresented: self.$showSearchView) {
+                SearchView()
+            }
         }
     }
 }
