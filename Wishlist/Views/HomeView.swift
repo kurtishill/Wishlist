@@ -13,10 +13,8 @@ struct HomeView: View {
         Button(action: {
             
         }) {
-            Image("menu")
-                .resizable()
-                .foregroundColor(.black)
-                .frame(width: 20, height: 20)
+            Text("Logout")
+                .foregroundColor(AssetColors.accentColor)
         }
     }
     
@@ -25,6 +23,15 @@ struct HomeView: View {
             
         }) {
             Image(systemName: "square.and.arrow.up")
+                .foregroundColor(.black)
+        }
+    }
+    
+    var searchButton: some View {
+        Button(action: {
+            
+        }) {
+            Image(systemName: "magnifyingglass")
                 .foregroundColor(.black)
         }
     }
@@ -38,6 +45,8 @@ struct HomeView: View {
                     Text("Wishlist")
                         .font(.custom(AssetsFonts.primaryFont, size: 20))
                     Spacer()
+                    searchButton
+                        .padding(.trailing, 15)
                     shareButton
                 }.padding(.trailing, 20)
                     .padding(.leading, 20)
