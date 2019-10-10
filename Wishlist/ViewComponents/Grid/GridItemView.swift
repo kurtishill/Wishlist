@@ -12,12 +12,14 @@ struct GridItemView: View {
     var item: Item
     var gridWidth: CGFloat
     var gridHeight: CGFloat
+    var isItemSelected: Bool?
     
     var body: some View {
         ZStack {
             RoundedRectangle(cornerRadius: 7)
                 .frame(width: self.gridWidth, height: self.gridHeight)
-                .foregroundColor(.white)
+                .foregroundColor(self.isItemSelected ?? false ? AssetColors.accentColor : .white)
+                .animation(.spring())
                 .shadow(color: Color("lightBlue"), radius: 8, x: 0, y: 0)
             GeometryReader { geometry in
                 VStack {
@@ -44,7 +46,8 @@ struct GridItemView: View {
                                 .minimumScaleFactor(0.5)
                             Text("$\(self.item.price)")
                                 .font(.custom(AssetsFonts.primaryFont, size: 15))
-                                .foregroundColor(.gray)
+                                .foregroundColor(self.isItemSelected ?? false ? .white : .gray)
+                                .animation(.spring())
                                 .minimumScaleFactor(0.5)
                             Spacer()
                         }

@@ -10,6 +10,8 @@ import SwiftUI
 import UIKit
 
 struct SearchView: View {
+    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
+    
     @ObservedObject var searchVM: SearchViewModel = SearchViewModel()
     
     @State var searchableString: String = ""
@@ -23,11 +25,13 @@ struct SearchView: View {
                 Spacer()
                 
                 Button(action: {
-                    
+                    // do something with selected items
+                    self.presentationMode.wrappedValue.dismiss()
                 }) {
                     Text("Add")
                         .font(.custom(AssetsFonts.primaryFont, size: 17))
-                        .foregroundColor(AssetColors.accentColor)
+                        .foregroundColor(self.searchVM.selectedItems.count > 0 ? AssetColors.accentColor : Color.gray.opacity(0.2))
+                        .animation(.spring())
                 }
             }
             
@@ -56,7 +60,7 @@ struct SearchView: View {
                 }
             }
             
-            GridView(items: self.searchVM.items)
+            GridView(items: self.searchVM.items, gridViewDelegate: self.searchVM)
             
         }.padding(.all, 10)
             .edgesIgnoringSafeArea(.all)

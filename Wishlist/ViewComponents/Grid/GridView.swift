@@ -8,9 +8,11 @@
 
 import SwiftUI
 
-struct GridView: View {
+struct GridView<T: GridViewSelectDelegate>: View {
     let numColumns: Int = 2
     let items: [Item]
+    
+    @ObservedObject var gridViewDelegate: T
     
     var body: some View {
         let width = UIScreen.main.bounds.width / CGFloat(self.numColumns) - 30
@@ -23,7 +25,10 @@ struct GridView: View {
                 ForEach(chunked, id: \.self) { row in
                     HStack(alignment: .center, spacing: 5) {
                         ForEach(row) { item in
-                            GridItemView(item: item, gridWidth: width, gridHeight: height)
+                            GridItemView(item: item, gridWidth: width, gridHeight: height, isItemSelected: self.gridViewDelegate.isItemSelected(item))
+                                .onTapGesture {
+                                    self.gridViewDelegate.itemSelected(item)
+                            }
                         }
                         ForEach(0..<(self.numColumns - row.count)) { _ in
                             Spacer()
@@ -33,6 +38,11 @@ struct GridView: View {
             }
         }.padding(.init(top: 0, leading: 15, bottom: 10, trailing: 15))
     }
+}
+
+protocol GridViewSelectDelegate: ObservableObject {
+    func itemSelected(_ item: Item)
+    func isItemSelected(_ item: Item) -> Bool
 }
     
 //struct GridView_Previews: PreviewProvider {

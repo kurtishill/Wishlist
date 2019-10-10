@@ -9,13 +9,15 @@
 import Foundation
 import Combine
 
-class SearchViewModel: ObservableObject {
+class SearchViewModel: ObservableObject, GridViewSelectDelegate {
     let searchService: SearchService
     
     @Published var items: [Item] = []
     @Published var searchErrorMessage: String = ""
     @Published var searchBarError: Bool = false
     @Published var isLoading: Bool = false
+    
+    @Published var selectedItems: [Item] = []
     
     init() {
         self.searchService = SearchService(searchNetwork: MockSearch())
@@ -44,5 +46,17 @@ class SearchViewModel: ObservableObject {
         } else {
             self.searchBarError = true
         }
+    }
+    
+    func itemSelected(_ item: Item) {
+        if self.selectedItems.contains(item) {
+            self.selectedItems.remove(at: self.selectedItems.firstIndex(of: item)!)
+        } else {
+            self.selectedItems.append(item)
+        }
+    }
+    
+    func isItemSelected(_ item: Item) -> Bool {
+        return self.selectedItems.contains(item)
     }
 }
