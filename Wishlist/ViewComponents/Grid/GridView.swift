@@ -12,7 +12,7 @@ struct GridView<T: GridViewSelectDelegate>: View {
     let numColumns: Int = 2
     let items: [Item]
     
-    @ObservedObject var gridViewDelegate: T
+    var gridViewDelegate: T
     
     var body: some View {
         let width = UIScreen.main.bounds.width / CGFloat(self.numColumns) - 30
@@ -25,10 +25,8 @@ struct GridView<T: GridViewSelectDelegate>: View {
                 ForEach(chunked, id: \.self) { row in
                     HStack(alignment: .center, spacing: 5) {
                         ForEach(row) { item in
-                            GridItemView(item: item, gridWidth: width, gridHeight: height, isItemSelected: self.gridViewDelegate.isItemSelected(item))
-                                .onTapGesture {
-                                    self.gridViewDelegate.itemSelected(item)
-                            }.offset(x: self.numColumns - row.count > 0 ? 2.5 : 0)
+                            GridItemView(item: item, gridWidth: width, gridHeight: height, gridViewDelegate: self.gridViewDelegate)
+                                .offset(x: self.numColumns - row.count > 0 ? 2.5 : 0)
                         }
                         ForEach(0..<(self.numColumns - row.count)) { _ in
                             Spacer()
@@ -41,8 +39,8 @@ struct GridView<T: GridViewSelectDelegate>: View {
 }
 
 protocol GridViewSelectDelegate: ObservableObject {
-    func itemSelected(_ item: Item)
-    func isItemSelected(_ item: Item) -> Bool
+    func favoriteTapped(for item: Item)
+    func isItemFavorited(_ item: Item) -> Bool
 }
     
 //struct GridView_Previews: PreviewProvider {

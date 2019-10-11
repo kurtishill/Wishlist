@@ -13,11 +13,11 @@ class YourWishlistViewModel: ObservableObject, GridViewSelectDelegate {
     @Published var isLoadingList: Bool = false
     @Published var wishlist: [Item] = [Item]()
     
-    func itemSelected(_ item: Item) {
+    func favoriteTapped(for item: Item) {
         
     }
     
-    func isItemSelected(_ item: Item) -> Bool {
-        return false
+    func isItemFavorited(_ item: Item) -> Bool {
+        return true
     }
 }
