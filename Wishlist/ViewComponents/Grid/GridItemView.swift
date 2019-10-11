@@ -15,29 +15,33 @@ let priceFormatter: NumberFormatter = {
     return nf
 }()
 
-struct GridItemView: View {
+struct GridItemView<T: GridViewSelectDelegate>: View {
     var item: Item
     var gridWidth: CGFloat
     var gridHeight: CGFloat
-    var isItemSelected: Bool?
+    @ObservedObject var gridViewDelegate: T
     
     var body: some View {
         VStack {
             RoundedRectangle(cornerRadius: 7)
                 .frame(width: self.gridWidth, height: self.gridHeight)
-                .foregroundColor(self.isItemSelected ?? false ? AssetColors.accentColor : .white)
+                .foregroundColor(.white)
                 .animation(.spring())
                 .shadow(color: Color("lightBlue"), radius: 8, x: 0, y: 0)
                 .overlay(
             GeometryReader { geometry in
                 VStack {
-//                    HStack {
-//                        Spacer()
-//                        Image(systemName: "heart.fill")
-//                            .resizable()
-//                            .frame(width: 20, height: 20)
-//                            .foregroundColor(Color("salmon"))
-//                    }
+                    HStack {
+                        Spacer()
+                        Image(systemName: self.gridViewDelegate.isItemFavorited(self.item) ? "heart.fill" : "heart")
+                            .resizable()
+                            .frame(width: 20, height: 20)
+                            .foregroundColor(AssetColors.accentColor)
+                            .animation(.spring())
+                            .onTapGesture {
+                                self.gridViewDelegate.favoriteTapped(for: self.item)
+                        }
+                    }
                     
                     Spacer()
                     
@@ -55,7 +59,7 @@ struct GridItemView: View {
                                 .minimumScaleFactor(0.8)
                             Text(priceFormatter.string(from: self.item.price as NSNumber)!)
                                 .font(.custom(AssetsFonts.primaryFont, size: 15))
-                                .foregroundColor(self.isItemSelected ?? false ? .white : .gray)
+                                .foregroundColor(.gray)
                                 .animation(.spring())
                                 .minimumScaleFactor(0.8)
                             Spacer()
@@ -63,10 +67,14 @@ struct GridItemView: View {
                         
                         Spacer()
                         
-//                        Image(systemName: "checkmark.circle.fill")
-//                            .resizable()
-//                            .frame(width: 20, height: 20)
-//                            .foregroundColor(Color("darkDullBlue"))
+                        Button(action: {
+                            
+                        }) {
+                            Image(systemName: "ellipsis.circle.fill")
+                                .resizable()
+                                .frame(width: 20, height: 20)
+                                .foregroundColor(AssetColors.primaryColor)
+                        }
                     }
                 }.padding(.all, 15)
             })

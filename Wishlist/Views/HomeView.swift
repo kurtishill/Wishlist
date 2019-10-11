@@ -13,7 +13,9 @@ struct HomeView: View {
         Button(action: {
             
         }) {
-            Image(systemName: "arrowshape.turn.up.left")
+            Image("menu")
+                .resizable()
+                .frame(width: 20, height: 20)
                 .foregroundColor(.black)
         }
     }

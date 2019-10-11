@@ -48,7 +48,7 @@ class SearchViewModel: ObservableObject, GridViewSelectDelegate {
         }
     }
     
-    func itemSelected(_ item: Item) {
+    func favoriteTapped(for item: Item) {
         if self.selectedItems.contains(item) {
             self.selectedItems.remove(at: self.selectedItems.firstIndex(of: item)!)
         } else {
@@ -56,7 +56,7 @@ class SearchViewModel: ObservableObject, GridViewSelectDelegate {
         }
     }
     
-    func isItemSelected(_ item: Item) -> Bool {
+    func isItemFavorited(_ item: Item) -> Bool {
         return self.selectedItems.contains(item)
     }
 }
