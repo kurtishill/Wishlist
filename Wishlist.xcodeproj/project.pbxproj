@@ -49,6 +49,7 @@
 		0AAAFC5323403F8800059F07 /* MockCreateItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AAAFC5223403F8800059F07 /* MockCreateItem.swift */; };
 		0AAAFC55234040AB00059F07 /* CreateItemService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AAAFC54234040AB00059F07 /* CreateItemService.swift */; };
 		0ADC977C2350EC480053FB4B /* AuthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A9E91BC233E96360077CF5C /* AuthView.swift */; };
+		0ADC977E2351102E0053FB4B /* SideMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ADC977D2351102E0053FB4B /* SideMenu.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -96,6 +97,7 @@
 		0AAAFC5023403F1100059F07 /* CreateItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateItem.swift; sourceTree = "<group>"; };
 		0AAAFC5223403F8800059F07 /* MockCreateItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockCreateItem.swift; sourceTree = "<group>"; };
 		0AAAFC54234040AB00059F07 /* CreateItemService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateItemService.swift; sourceTree = "<group>"; };
+		0ADC977D2351102E0053FB4B /* SideMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenu.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -228,6 +230,7 @@
 				0A9E91BE233F02B00077CF5C /* Circles.swift */,
 				0AAAFC2E233FB19900059F07 /* LoadingIndicator.swift */,
 				0A482ADF23404F74003FB54B /* BottomFab.swift */,
+				0ADC977D2351102E0053FB4B /* SideMenu.swift */,
 			);
 			path = ViewComponents;
 			sourceTree = "<group>";
@@ -404,6 +407,7 @@
 				0AAAFC48233FC10E00059F07 /* MockLogin.swift in Sources */,
 				0AAAFC4F23403DCD00059F07 /* Item.swift in Sources */,
 				0AAAFC55234040AB00059F07 /* CreateItemService.swift in Sources */,
+				0ADC977E2351102E0053FB4B /* SideMenu.swift in Sources */,
 				0A0118242343C62C00AEC9FE /* AssetFonts.swift in Sources */,
 				0A482AF62342B440003FB54B /* AuthFormView.swift in Sources */,
 				0A482AFE2342B581003FB54B /* SignUpState.swift in Sources */,

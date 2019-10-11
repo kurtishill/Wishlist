@@ -9,9 +9,11 @@
 import SwiftUI
 
 struct HomeView: View {
-    var logoutButton: some View {
+    @State var menuOpen: Bool = false
+    
+    var menuButton: some View {
         Button(action: {
-            
+            self.toggleMenu()
         }) {
             Image("menu")
                 .resizable()
@@ -30,28 +32,36 @@ struct HomeView: View {
     }
     
     var body: some View {
-        VStack {
-            Group {
-                HStack {
-                    logoutButton
-                    Spacer()
-                    Text("Wishlist")
-                        .font(.custom(AssetsFonts.primaryFont, size: 20))
-                    Spacer()
-                    shareButton
-                }.padding(.trailing, 20)
-                    .padding(.leading, 20)
-                Divider()
-                    .offset(y: 10)
-            }
-            YourWishlistView()
-                .frame(minWidth: 0, maxWidth: UIScreen.main.bounds.width, minHeight: 0, maxHeight: UIScreen.main.bounds.height)
-                .offset(y: 7.5)
-        }.navigationBarHidden(true)
-            .navigationBarBackButtonHidden(true)
-            .navigationBarTitle("")
-            .edgesIgnoringSafeArea(.all)
-            .padding(.top, 20)
+        ZStack {
+            VStack {
+                Group {
+                    HStack {
+                        menuButton
+                        Spacer()
+                        Text("Wishlist")
+                            .font(.custom(AssetsFonts.primaryFont, size: 20))
+                        Spacer()
+                        shareButton
+                    }.padding(.trailing, 20)
+                        .padding(.leading, 20)
+                    Divider()
+                        .offset(y: 10)
+                }
+                YourWishlistView()
+                    .frame(minWidth: 0, maxWidth: UIScreen.main.bounds.width, minHeight: 0, maxHeight: UIScreen.main.bounds.height)
+                    .offset(y: 7.5)
+            }.navigationBarHidden(true)
+                .navigationBarBackButtonHidden(true)
+                .navigationBarTitle("")
+                .edgesIgnoringSafeArea(.all)
+                .padding(.top, 20)
+            
+            SideMenu(width: UIScreen.main.bounds.width * (3/4), isOpen: self.menuOpen, menuClose: self.toggleMenu)
+        }
+    }
+    
+    func toggleMenu() {
+        self.menuOpen.toggle()
     }
 }
 
