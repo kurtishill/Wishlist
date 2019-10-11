@@ -13,8 +13,8 @@ struct HomeView: View {
         Button(action: {
             
         }) {
-            Text("Logout")
-                .foregroundColor(AssetColors.accentColor)
+            Image(systemName: "arrowshape.turn.up.left")
+                .foregroundColor(.black)
         }
     }
     

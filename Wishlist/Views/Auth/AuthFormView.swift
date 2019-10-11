@@ -89,8 +89,8 @@ struct AuthFormView: View {
                     
                     Text(self.authVM.state is LoginState ? "Log in" : "Sign up")
                         .foregroundColor(self.authVM.state is LoginState ? .white : AssetColors.accentColor)
-                        .font(.custom(AssetsFonts.primaryFont, size: 20))
                         .animation(.spring())
+                        .font(.custom(AssetsFonts.primaryFont, size: 20))
                         .contentShape(NoHitShape())
                 }
             }

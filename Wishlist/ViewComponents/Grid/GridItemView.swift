@@ -8,6 +8,13 @@
 
 import SwiftUI
 
+let priceFormatter: NumberFormatter = {
+    let nf = NumberFormatter()
+    nf.locale = .current
+    nf.numberStyle = .currency
+    return nf
+}()
+
 struct GridItemView: View {
     var item: Item
     var gridWidth: CGFloat
@@ -15,12 +22,13 @@ struct GridItemView: View {
     var isItemSelected: Bool?
     
     var body: some View {
-        ZStack {
+        VStack {
             RoundedRectangle(cornerRadius: 7)
                 .frame(width: self.gridWidth, height: self.gridHeight)
                 .foregroundColor(self.isItemSelected ?? false ? AssetColors.accentColor : .white)
                 .animation(.spring())
                 .shadow(color: Color("lightBlue"), radius: 8, x: 0, y: 0)
+                .overlay(
             GeometryReader { geometry in
                 VStack {
 //                    HStack {
@@ -36,19 +44,20 @@ struct GridItemView: View {
                     Image(systemName: "gift.fill")
                         .resizable()
                         .frame(minWidth: 0, maxWidth: geometry.size.width - 80, minHeight: 0, maxHeight: geometry.size.height - 100)
-                        .foregroundColor(Color("dullYellow"))
+                        .foregroundColor(AssetColors.warningColor)
                     
                     HStack {
                         VStack(alignment: .leading) {
                             Spacer()
                             Text(self.item.name)
                                 .font(.custom(AssetsFonts.primaryFont, size: 25))
-                                .minimumScaleFactor(0.5)
-                            Text("$\(self.item.price)")
+                                .foregroundColor(.black)
+                                .minimumScaleFactor(0.8)
+                            Text(priceFormatter.string(from: self.item.price as NSNumber)!)
                                 .font(.custom(AssetsFonts.primaryFont, size: 15))
                                 .foregroundColor(self.isItemSelected ?? false ? .white : .gray)
                                 .animation(.spring())
-                                .minimumScaleFactor(0.5)
+                                .minimumScaleFactor(0.8)
                             Spacer()
                         }
                         
@@ -60,7 +69,7 @@ struct GridItemView: View {
 //                            .foregroundColor(Color("darkDullBlue"))
                     }
                 }.padding(.all, 15)
-            }
+            })
         }.offset(x: 2.5, y: 0)
             .offset(x: -2.5, y: 0)
     }

@@ -21,14 +21,14 @@ struct GridView<T: GridViewSelectDelegate>: View {
         let chunked = items.chunked(into: self.numColumns)
         
         return ScrollView(.vertical, showsIndicators: false) {
-            VStack(alignment: .center, spacing: 15) {
+            VStack(alignment: .center, spacing: 5) {
                 ForEach(chunked, id: \.self) { row in
                     HStack(alignment: .center, spacing: 5) {
                         ForEach(row) { item in
                             GridItemView(item: item, gridWidth: width, gridHeight: height, isItemSelected: self.gridViewDelegate.isItemSelected(item))
                                 .onTapGesture {
                                     self.gridViewDelegate.itemSelected(item)
-                            }
+                            }.offset(x: self.numColumns - row.count > 0 ? 2.5 : 0)
                         }
                         ForEach(0..<(self.numColumns - row.count)) { _ in
                             Spacer()

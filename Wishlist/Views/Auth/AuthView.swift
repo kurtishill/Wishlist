@@ -73,9 +73,7 @@ struct PageContent: View {
                                      datePickerShowing: self.$datePickerShowing,
                                      spacePadding: spacePadding,
                                      componentSize: componentSize
-                            )
-                            .padding(.init(top: sidePadding * 2, leading: sidePadding * 2, bottom: 0, trailing: sidePadding * 2))
-                        Spacer()
+                            ).padding(.all, sidePadding * 2)
                     }
                 }
                 
@@ -139,8 +137,8 @@ struct DatePickerView: View {
     }
 }
 
-//struct RegisterView_Previews: PreviewProvider {
+//struct AuthView_Preview: PreviewProvider {
 //    static var previews: some View {
-//        RegisterView()
+//        AuthView()
 //    }
 //}

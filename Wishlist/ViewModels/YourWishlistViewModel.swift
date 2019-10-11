@@ -9,11 +9,15 @@
 import Foundation
 import Combine
 
-class YourWishlistViewModel: ObservableObject {
+class YourWishlistViewModel: ObservableObject, GridViewSelectDelegate {
     @Published var isLoadingList: Bool = false
     @Published var wishlist: [Item] = [Item]()
     
-    init() {
-        isLoadingList = true
+    func itemSelected(_ item: Item) {
+        
+    }
+    
+    func isItemSelected(_ item: Item) -> Bool {
+        return false
     }
 }

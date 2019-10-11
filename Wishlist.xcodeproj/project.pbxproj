@@ -34,7 +34,6 @@
 		0A4F1B1C233DAE1E00546749 /* GridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A4F1B1B233DAE1E00546749 /* GridView.swift */; };
 		0A9E91B7233E48540077CF5C /* Montserrat-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0A9E91B6233E48540077CF5C /* Montserrat-Medium.ttf */; };
 		0A9E91BB233E95BD0077CF5C /* GridItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A9E91BA233E95BD0077CF5C /* GridItemView.swift */; };
-		0A9E91BD233E96360077CF5C /* AuthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A9E91BC233E96360077CF5C /* AuthView.swift */; };
 		0A9E91BF233F02B00077CF5C /* Circles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A9E91BE233F02B00077CF5C /* Circles.swift */; };
 		0AAAFC2F233FB19900059F07 /* LoadingIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AAAFC2E233FB19900059F07 /* LoadingIndicator.swift */; };
 		0AAAFC32233FB4BB00059F07 /* AssetColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AAAFC31233FB4BB00059F07 /* AssetColors.swift */; };
@@ -49,6 +48,7 @@
 		0AAAFC5123403F1100059F07 /* CreateItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AAAFC5023403F1100059F07 /* CreateItem.swift */; };
 		0AAAFC5323403F8800059F07 /* MockCreateItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AAAFC5223403F8800059F07 /* MockCreateItem.swift */; };
 		0AAAFC55234040AB00059F07 /* CreateItemService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AAAFC54234040AB00059F07 /* CreateItemService.swift */; };
+		0ADC977C2350EC480053FB4B /* AuthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A9E91BC233E96360077CF5C /* AuthView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -391,6 +391,7 @@
 				0AAAFC4D233FC21100059F07 /* MockData.swift in Sources */,
 				0A482AE223405021003FB54B /* YourWishlistView.swift in Sources */,
 				0A4719B4234F7A6B00EA0C04 /* SearchView.swift in Sources */,
+				0ADC977C2350EC480053FB4B /* AuthView.swift in Sources */,
 				0AAAFC5323403F8800059F07 /* MockCreateItem.swift in Sources */,
 				0A4719B8234F8FA100EA0C04 /* SearchService.swift in Sources */,
 				0AAAFC3D233FBAB200059F07 /* SignUpService.swift in Sources */,
@@ -413,7 +414,6 @@
 				0A482AE023404F74003FB54B /* BottomFab.swift in Sources */,
 				0A482AFC2342B56F003FB54B /* LoginState.swift in Sources */,
 				0AAAFC32233FB4BB00059F07 /* AssetColors.swift in Sources */,
-				0A9E91BD233E96360077CF5C /* AuthView.swift in Sources */,
 				0A4719BC234F9E9D00EA0C04 /* MockSearch.swift in Sources */,
 				0A0118282343F72A00AEC9FE /* MockSignUp.swift in Sources */,
 				0AAAFC5123403F1100059F07 /* CreateItem.swift in Sources */,
