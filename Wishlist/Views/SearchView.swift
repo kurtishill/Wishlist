@@ -76,6 +76,7 @@ struct SearchBar: View {
         .frame(height: 50)
         .padding(.leading, 30)
         .background(self.searchBarError ? AssetColors.warningColor : Color.gray.opacity(0.2))
+        .animation(.spring())
         .mask(RoundedRectangle(cornerRadius: 7))
         .font(.custom(AssetsFonts.primaryFont, size: 17))
         .overlay(HStack {
