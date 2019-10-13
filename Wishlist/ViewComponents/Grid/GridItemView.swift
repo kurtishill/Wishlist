@@ -21,6 +21,20 @@ struct GridItemView<T: GridViewSelectDelegate>: View {
     var gridHeight: CGFloat
     @ObservedObject var gridViewDelegate: T
     
+    @State var pulse: Bool = false
+    
+    let duration = 0.2
+    
+    private var animation: Animation {
+        Animation.easeIn(duration: duration)
+    }
+    
+    private var timer: Timer {
+        Timer.scheduledTimer(withTimeInterval: duration, repeats: false) { _ in
+            self.pulse.toggle()
+        }
+    }
+    
     var body: some View {
         VStack {
             RoundedRectangle(cornerRadius: 7)
@@ -36,9 +50,13 @@ struct GridItemView<T: GridViewSelectDelegate>: View {
                         Image(systemName: self.gridViewDelegate.isItemFavorited(self.item) ? "heart.fill" : "heart")
                             .resizable()
                             .frame(width: 20, height: 20)
+                            .scaleEffect(self.pulse ? 1.5 : 1)
+                            .animation(self.animation)
                             .foregroundColor(AssetColors.accentColor)
                             .animation(.spring())
                             .onTapGesture {
+                                self.pulse.toggle()
+                                _ = self.timer
                                 self.gridViewDelegate.favoriteTapped(for: self.item)
                         }
                     }
