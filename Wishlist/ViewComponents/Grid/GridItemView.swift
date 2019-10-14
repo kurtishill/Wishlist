@@ -23,7 +23,7 @@ struct GridItemView<T: GridViewSelectDelegate>: View {
     
     @State var pulse: Bool = false
     
-    let duration = 0.2
+    let duration = 0.15
     
     private var animation: Animation {
         Animation.easeIn(duration: duration)
