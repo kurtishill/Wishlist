@@ -8,7 +8,7 @@
 
 import Foundation
 
-class MockSearch: SearchNetworkProtocol {
+class MockSearchProxy: SearchProxyProtocol {
     func search(keyword: String) throws -> [Item] {
         let s = DispatchSemaphore(value: 0)
         _ = s.wait(timeout: .now() + 1.0)

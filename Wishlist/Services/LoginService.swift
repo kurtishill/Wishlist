@@ -9,15 +9,11 @@
 import Foundation
 
 class LoginService {
-    let loginNetwork: LoginNetworkProtocol
-    
-    init(loginNetwork: LoginNetworkProtocol) {
-        self.loginNetwork = loginNetwork
-    }
+    let loginProxy: LoginProxyProtocol = ProxyFactory.createLoginProxy()
     
     func login(username: String, password: String) -> User? {
         do {
-            let user = try loginNetwork.login(username: username, password: password)
+            let user = try loginProxy.login(username: username, password: password)
             return user
         } catch {
             print("Error: ", error)

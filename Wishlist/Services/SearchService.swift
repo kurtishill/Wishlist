@@ -9,15 +9,11 @@
 import Foundation
 
 class SearchService {
-    let searchNetwork: SearchNetworkProtocol
-    
-    init(searchNetwork: SearchNetworkProtocol) {
-        self.searchNetwork = searchNetwork
-    }
+    let searchProxy: SearchProxyProtocol = ProxyFactory.createSearchProxy()
     
     func search(for keyword: String) -> [Item]? {
         do {
-            let items = try searchNetwork.search(keyword: keyword)
+            let items = try searchProxy.search(keyword: keyword)
             return items
         } catch {
             print("Error: ", error)

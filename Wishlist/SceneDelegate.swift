@@ -21,6 +21,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
         // Create the SwiftUI view that provides the window contents.
 //        let contentView = ContentView()
+        ProxyFactory.configure(factory: MockProxyFactory())
+        
         let contentView = AuthView()
 
         // Use a UIHostingController as window root view controller.

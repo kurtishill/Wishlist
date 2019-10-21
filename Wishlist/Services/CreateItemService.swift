@@ -8,20 +8,16 @@
 
 import Foundation
 
-class CreateItemService {
-    let createItemNetwork: CreateItemNetworkProtocol
-    
-    init(createItemNetwork: CreateItemNetworkProtocol) {
-        self.createItemNetwork = createItemNetwork
-    }
-    
-    func createItem(ref: String, for list: String) -> Item? {
-        do {
-            let item = try createItemNetwork.createItem(ref: ref, for: list)
-            return item
-        } catch {
-            print("Error: ", error)
-            return nil
-        }
-    }
-}
+//class CreateItemService {
+//    let createItemProxy: CreateItemProxyProtocol
+//
+//    func createItem(ref: String, for list: String) -> Item? {
+//        do {
+//            let item = try createItemProxy.createItem(ref: ref, for: list)
+//            return item
+//        } catch {
+//            print("Error: ", error)
+//            return nil
+//        }
+//    }
+//}

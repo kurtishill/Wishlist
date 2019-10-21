@@ -10,8 +10,8 @@ import Foundation
 import Combine
 
 class AuthViewModel: ObservableObject {
-    let loginService: LoginService
-    let signUpService: SignUpService
+    let loginService: LoginService = LoginService()
+    let signUpService: SignUpService = SignUpService()
     
     @Published var isAuthenticating: Bool = false
     @Published var isAuthenticated: Int? = 0
@@ -24,8 +24,6 @@ class AuthViewModel: ObservableObject {
     @Published var state: AuthState
     
     init() {
-        self.loginService = LoginService(loginNetwork: MockLogin())
-        self.signUpService = SignUpService(signUpNetwork: MockSignUp())
         self.state = LoginState(loginService: self.loginService)
     }
     

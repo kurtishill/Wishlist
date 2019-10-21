@@ -8,7 +8,7 @@
 
 import Foundation
 
-class MockSignUp: SignUpNetworkProtocol {
+class MockSignUpProxy: SignUpProxyProtocol {
     func signUp(username: String, password: String, name: String, birthdate: String) throws -> User {
         let s = DispatchSemaphore(value: 0)
         _ = s.wait(timeout: .now() + 1.0)

@@ -1,5 +1,5 @@
 //
-//  CreateItem.swift
+//  SignIn.swift
 //  Wishlist
 //
 //  Created by Kurtis Hill on 9/28/19.
@@ -8,6 +8,6 @@
 
 import Foundation
 
-protocol CreateItemNetworkProtocol {
-    func createItem(ref: String, for list: String) throws -> Item
+protocol LoginProxyProtocol {
+    func login(username: String, password: String) throws -> User
 }
