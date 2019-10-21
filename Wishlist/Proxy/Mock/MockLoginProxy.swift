@@ -8,7 +8,7 @@
 
 import Foundation
 
-class MockLogin: LoginNetworkProtocol {
+class MockLoginProxy: LoginProxyProtocol {
     func login(username: String, password: String) throws -> User {
         let s = DispatchSemaphore(value: 0)
         _ = s.wait(timeout: .now() + 1.0)

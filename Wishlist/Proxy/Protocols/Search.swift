@@ -8,6 +8,6 @@
 
 import Foundation
 
-protocol SearchNetworkProtocol {
+protocol SearchProxyProtocol {
     func search(keyword: String) throws -> [Item]
 }

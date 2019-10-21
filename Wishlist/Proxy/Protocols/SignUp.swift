@@ -8,6 +8,6 @@
 
 import Foundation
 
-protocol SignUpNetworkProtocol {
+protocol SignUpProxyProtocol {
     func signUp(username: String, password: String, name: String, birthdate: String) throws -> User
 }

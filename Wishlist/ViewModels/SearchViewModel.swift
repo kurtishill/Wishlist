@@ -20,7 +20,7 @@ class SearchViewModel: ObservableObject, GridViewSelectDelegate {
     @Published var selectedItems: [Item] = []
     
     init() {
-        self.searchService = SearchService(searchNetwork: MockSearch())
+        self.searchService = SearchService()
     }
     
     func search(for keyword: String) {

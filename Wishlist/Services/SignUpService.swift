@@ -9,15 +9,11 @@
 import Foundation
 
 class SignUpService {
-    let signUpNetwork: SignUpNetworkProtocol
-    
-    init(signUpNetwork: SignUpNetworkProtocol) {
-        self.signUpNetwork = signUpNetwork
-    }
+    let signUpProxy: SignUpProxyProtocol = ProxyFactory.createSignUpProxy()
     
     func signUp(username: String, password: String, name: String, birthdate: String) -> User? {
         do {
-            let user = try signUpNetwork.signUp(username: username, password: password, name: name, birthdate: birthdate)
+            let user = try signUpProxy.signUp(username: username, password: password, name: name, birthdate: birthdate)
             return user
         } catch {
             print("Error: ", error)
