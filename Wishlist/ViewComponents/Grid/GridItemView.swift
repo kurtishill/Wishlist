@@ -88,7 +88,7 @@ struct GridItemView<T: GridViewSelectDelegate>: View {
                         Button(action: {
                             
                         }) {
-                            Image(systemName: "ellipsis.circle.fill")
+                            Image(systemName: "info.circle.fill")
                                 .resizable()
                                 .frame(width: 20, height: 20)
                                 .foregroundColor(AssetColors.primaryColor)
