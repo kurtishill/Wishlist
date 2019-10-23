@@ -7,9 +7,16 @@
 //
 
 import Foundation
+import Alamofire
 
 class SignUpProxy: SignUpProxyProtocol {
     func signUp(username: String, password: String, name: String, birthdate: String) throws -> User {
-        return User(username: "", name: "", birthdate: "")
+        return try! Request<User>.send(url: "http://www.google.com",
+                                       method: "post",
+                                       params: ["username": username,
+                                                "password": password,
+                                                "name": name,
+                                                "birthdate": birthdate]
+        )
     }
 }

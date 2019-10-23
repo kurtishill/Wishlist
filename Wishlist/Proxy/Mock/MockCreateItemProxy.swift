@@ -9,7 +9,7 @@
 import Foundation
 
 //class MockCreateItem: CreateItemProxyProtocol {
-//    func createItem(ref: String, for list: String) throws -> Item {
+//    func createItem(ref: String, for list: String) -> Item {
 //        let s = DispatchSemaphore(value: 0)
 //        _ = s.wait(timeout: .now() + 1.0)
 //        return MockData.items.createRandomItem()

@@ -7,9 +7,10 @@
 //
 
 import Foundation
+import Alamofire
 
 class SearchProxy: SearchProxyProtocol {
     func search(keyword: String) throws -> [Item] {
-        return []
+        return try! Request<[Item]>.send(url: "", method: "get")
     }
 }
