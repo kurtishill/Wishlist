@@ -46,35 +46,48 @@ struct GridItemView<T: GridViewSelectDelegate>: View {
                 .overlay(
             GeometryReader { geometry in
                 VStack {
-                    HStack {
-                        Spacer()
-                        Image(systemName: self.gridViewDelegate.isItemFavorited(self.item) ? "heart.fill" : "heart")
-                            .resizable()
-                            .frame(width: 20, height: 20)
-                            .scaleEffect(self.pulse ? 1.5 : 1)
-                            .animation(self.animation)
-                            .foregroundColor(AssetColors.accentColor)
-                            .animation(.spring())
-                            .onTapGesture {
-                                self.pulse.toggle()
-                                _ = self.timer
-                                self.gridViewDelegate.favoriteTapped(for: self.item)
+                    ZStack {
+                        
+                        URLImage(
+                            self.item.photo.url,
+                            placeholder: { _ in
+                                LoadingIndicator()
+                            },
+                            content: { proxy in
+                                proxy.image
+                                    .resizable()
+                                    .cornerRadius(7)
+                                
+                        })
+                        
+                        VStack {
+                            HStack {
+                                Spacer()
+                                Image(systemName: self.gridViewDelegate.isItemFavorited(self.item) ? "heart.fill" : "heart")
+                                    .resizable()
+                                    .frame(width: 22, height: 22)
+                                    .scaleEffect(self.pulse ? 1.5 : 1)
+                                    .animation(self.animation)
+                                    .foregroundColor(AssetColors.accentColor)
+                                    .animation(.spring())
+                                    .shadow(radius: 3)
+                                    .onTapGesture {
+                                        self.pulse.toggle()
+                                        _ = self.timer
+                                        self.gridViewDelegate.favoriteTapped(for: self.item)
+                                }
+                            }.padding(.trailing, 15)
+                                .padding(.top, 15)
+                            
+                            Spacer()
                         }
                     }
-                    
-                    Spacer()
-                    
-                    URLImage(
-                        self.item.photo.url,
-                        content: { $0.image
-                            .resizable()
-                    })//.frame(minWidth: 0, maxWidth: geometry.size.width - 80, minHeight: 0, maxHeight: geometry.size.height - 100)
                     
                     HStack {
                         VStack(alignment: .leading) {
                             Spacer()
                             Text(self.item.productName)
-                                .font(.custom(AssetsFonts.primaryFont, size: 25))
+                                .font(.custom(AssetsFonts.primaryFont, size: 20))
                                 .foregroundColor(.black)
                                 .minimumScaleFactor(0.8)
                             Text(priceFormatter.string(from: self.item.price as NSNumber)!)
@@ -95,8 +108,9 @@ struct GridItemView<T: GridViewSelectDelegate>: View {
                                 .frame(width: 20, height: 20)
                                 .foregroundColor(AssetColors.primaryColor)
                         }
-                    }
-                }.padding(.all, 15)
+                    }.padding(.leading, 15)
+                        .padding(.trailing, 15)
+                }
             })
         }.offset(x: 2.5, y: 0)
             .offset(x: -2.5, y: 0)
