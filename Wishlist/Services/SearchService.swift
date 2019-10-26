@@ -13,7 +13,8 @@ class SearchService {
     
     func search(for keyword: String) -> [Item]? {
         do {
-            let items = try searchProxy.search(keyword: keyword)
+            let searchResponse: SearchResponse = try searchProxy.search(keyword: keyword)
+            let items = searchResponse.searchResults
             return items
         } catch {
             print("Error: ", error)

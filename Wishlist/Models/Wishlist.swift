@@ -10,5 +10,6 @@ import Foundation
 
 struct Wishlist: Identifiable {
     let id: String = UUID().uuidString
+    let listName: String
     let items: [Item]
 }

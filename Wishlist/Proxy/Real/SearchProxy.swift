@@ -7,9 +7,22 @@
 //
 
 import Foundation
+import Alamofire
 
 class SearchProxy: SearchProxyProtocol {
-    func search(keyword: String) throws -> [Item] {
-        return []
+    let ip: String
+    let port: String
+    
+    init(ip: String, port: String) {
+        self.ip = ip
+        self.port = port
+    }
+    
+    func search(keyword: String) throws -> SearchResponse {
+        do {
+            return try Request<SearchResponse>.send(url: "http://\(self.ip):\(self.port)/search", method: "post", params: ["searchQuery": keyword])
+        } catch {
+            throw error
+        }
     }
 }

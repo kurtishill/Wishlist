@@ -21,7 +21,7 @@ class Items {
     func createRandomItem() -> Item {
         return Item(
             id: UUID().uuidString,
-            name: "Gift \(Int.random(in: 0..<100))",
+            productName: "Gift \(Int.random(in: 0..<100))",
             price: Double.random(in: 0..<1000).rounded(),
             photo: "",
             url: ""
@@ -29,10 +29,10 @@ class Items {
     }
     
     func mockItems() -> [Item] {
-        return [Item(id: "1", name: "Gift 1", price: 150.00, photo: "", url: ""),
-        Item(id: "2", name: "Gift 2", price: 200.00, photo: "", url: ""),
-        Item(id: "3", name: "Gift 3", price: 100.00, photo: "", url: ""),
-        Item(id: "4", name: "Gift 4", price: 50.00, photo: "", url: ""),
-        Item(id: "5", name: "Gift 5", price: 75.00, photo: "", url: "")]
+        return [Item(id: "1", productName: "Gift 1", price: 150.00, photo: "", url: ""),
+        Item(id: "2", productName: "Gift 2", price: 200.00, photo: "", url: ""),
+        Item(id: "3", productName: "Gift 3", price: 100.00, photo: "", url: ""),
+        Item(id: "4", productName: "Gift 4", price: 50.00, photo: "", url: ""),
+        Item(id: "5", productName: "Gift 5", price: 75.00, photo: "", url: "")]
     }
 }

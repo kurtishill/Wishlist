@@ -8,9 +8,9 @@
 
 import Foundation
 
-struct Item: Identifiable, Hashable {
+struct Item: Identifiable, Hashable, Decodable {
     let id: String
-    let name: String
+    let productName: String
     let price: Double
     let photo: String
     let url: String

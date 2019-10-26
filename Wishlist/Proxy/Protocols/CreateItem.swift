@@ -9,5 +9,5 @@
 import Foundation
 
 protocol CreateItemProxyProtocol {
-    func createItem(ref: String, for list: String) throws -> Item
+    func createItem(ref: String, for list: String) -> Item
 }

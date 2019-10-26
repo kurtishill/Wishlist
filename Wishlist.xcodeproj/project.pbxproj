@@ -3,13 +3,16 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		0A0118242343C62C00AEC9FE /* AssetFonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A0118232343C62C00AEC9FE /* AssetFonts.swift */; };
 		0A0118262343F46F00AEC9FE /* SignUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A0118252343F46F00AEC9FE /* SignUp.swift */; };
 		0A0118282343F72A00AEC9FE /* MockSignUpProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A0118272343F72A00AEC9FE /* MockSignUpProxy.swift */; };
+		0A0C2B312364EDDD00D0A059 /* SearchResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A0C2B302364EDDD00D0A059 /* SearchResponse.swift */; };
+		0A0C2B342364F2E000D0A059 /* URLImage in Frameworks */ = {isa = PBXBuildFile; productRef = 0A0C2B332364F2E000D0A059 /* URLImage */; };
+		0A0C2B362364F32E00D0A059 /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A0C2B352364F32E00D0A059 /* StringExtensions.swift */; };
 		0A4719B4234F7A6B00EA0C04 /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A4719B3234F7A6B00EA0C04 /* SearchView.swift */; };
 		0A4719B6234F895300EA0C04 /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A4719B5234F895300EA0C04 /* SearchViewModel.swift */; };
 		0A4719B8234F8FA100EA0C04 /* SearchService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A4719B7234F8FA100EA0C04 /* SearchService.swift */; };
@@ -32,6 +35,8 @@
 		0A4F1B11233D824700546749 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0A4F1B10233D824700546749 /* Preview Assets.xcassets */; };
 		0A4F1B14233D824700546749 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0A4F1B12233D824700546749 /* LaunchScreen.storyboard */; };
 		0A4F1B1C233DAE1E00546749 /* GridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A4F1B1B233DAE1E00546749 /* GridView.swift */; };
+		0A6C05402360D5B800728B81 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A6C053F2360D5B800728B81 /* NetworkError.swift */; };
+		0A97A9092360DAB700A79D06 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A97A9082360DAB700A79D06 /* Request.swift */; };
 		0A9E91B7233E48540077CF5C /* Montserrat-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0A9E91B6233E48540077CF5C /* Montserrat-Medium.ttf */; };
 		0A9E91BB233E95BD0077CF5C /* GridItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A9E91BA233E95BD0077CF5C /* GridItemView.swift */; };
 		0A9E91BF233F02B00077CF5C /* Circles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A9E91BE233F02B00077CF5C /* Circles.swift */; };
@@ -47,7 +52,6 @@
 		0AAAFC3B233FBA9200059F07 /* LoginService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AAAFC3A233FBA9200059F07 /* LoginService.swift */; };
 		0AAAFC3D233FBAB200059F07 /* SignUpService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AAAFC3C233FBAB200059F07 /* SignUpService.swift */; };
 		0AAAFC44233FC09400059F07 /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AAAFC43233FC09400059F07 /* Login.swift */; };
-		0AAAFC46233FC0CF00059F07 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AAAFC45233FC0CF00059F07 /* NetworkError.swift */; };
 		0AAAFC48233FC10E00059F07 /* MockLoginProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AAAFC47233FC10E00059F07 /* MockLoginProxy.swift */; };
 		0AAAFC4B233FC1AD00059F07 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AAAFC4A233FC1AD00059F07 /* User.swift */; };
 		0AAAFC4D233FC21100059F07 /* MockData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AAAFC4C233FC21100059F07 /* MockData.swift */; };
@@ -57,12 +61,15 @@
 		0AAAFC55234040AB00059F07 /* CreateItemService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AAAFC54234040AB00059F07 /* CreateItemService.swift */; };
 		0ADC977C2350EC480053FB4B /* AuthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A9E91BC233E96360077CF5C /* AuthView.swift */; };
 		0ADC977E2351102E0053FB4B /* SideMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ADC977D2351102E0053FB4B /* SideMenu.swift */; };
+		C379318F2E33256A4A575BCE /* Pods_Wishlist.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D63A7F4B69FB4D6CF3D91B12 /* Pods_Wishlist.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		0A0118232343C62C00AEC9FE /* AssetFonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetFonts.swift; sourceTree = "<group>"; };
 		0A0118252343F46F00AEC9FE /* SignUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUp.swift; sourceTree = "<group>"; };
 		0A0118272343F72A00AEC9FE /* MockSignUpProxy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockSignUpProxy.swift; sourceTree = "<group>"; };
+		0A0C2B302364EDDD00D0A059 /* SearchResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResponse.swift; sourceTree = "<group>"; };
+		0A0C2B352364F32E00D0A059 /* StringExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtensions.swift; sourceTree = "<group>"; };
 		0A4719B3234F7A6B00EA0C04 /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
 		0A4719B5234F895300EA0C04 /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
 		0A4719B7234F8FA100EA0C04 /* SearchService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchService.swift; sourceTree = "<group>"; };
@@ -87,6 +94,8 @@
 		0A4F1B13233D824700546749 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0A4F1B15233D824700546749 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0A4F1B1B233DAE1E00546749 /* GridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridView.swift; sourceTree = "<group>"; };
+		0A6C053F2360D5B800728B81 /* NetworkError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
+		0A97A9082360DAB700A79D06 /* Request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
 		0A9E91B6233E48540077CF5C /* Montserrat-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Medium.ttf"; sourceTree = "<group>"; };
 		0A9E91BA233E95BD0077CF5C /* GridItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridItemView.swift; sourceTree = "<group>"; };
 		0A9E91BC233E96360077CF5C /* AuthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthView.swift; sourceTree = "<group>"; };
@@ -103,7 +112,6 @@
 		0AAAFC3A233FBA9200059F07 /* LoginService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginService.swift; sourceTree = "<group>"; };
 		0AAAFC3C233FBAB200059F07 /* SignUpService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpService.swift; sourceTree = "<group>"; };
 		0AAAFC43233FC09400059F07 /* Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
-		0AAAFC45233FC0CF00059F07 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
 		0AAAFC47233FC10E00059F07 /* MockLoginProxy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockLoginProxy.swift; sourceTree = "<group>"; };
 		0AAAFC4A233FC1AD00059F07 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		0AAAFC4C233FC21100059F07 /* MockData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockData.swift; sourceTree = "<group>"; };
@@ -112,6 +120,9 @@
 		0AAAFC5223403F8800059F07 /* MockCreateItemProxy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockCreateItemProxy.swift; sourceTree = "<group>"; };
 		0AAAFC54234040AB00059F07 /* CreateItemService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateItemService.swift; sourceTree = "<group>"; };
 		0ADC977D2351102E0053FB4B /* SideMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenu.swift; sourceTree = "<group>"; };
+		0E91F7E1377140C1BCF75A51 /* Pods-Wishlist.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Wishlist.release.xcconfig"; path = "Target Support Files/Pods-Wishlist/Pods-Wishlist.release.xcconfig"; sourceTree = "<group>"; };
+		597BEBDADA30DCA8E1FBDDDE /* Pods-Wishlist.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Wishlist.debug.xcconfig"; path = "Target Support Files/Pods-Wishlist/Pods-Wishlist.debug.xcconfig"; sourceTree = "<group>"; };
+		D63A7F4B69FB4D6CF3D91B12 /* Pods_Wishlist.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Wishlist.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,6 +130,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0A0C2B342364F2E000D0A059 /* URLImage in Frameworks */,
+				C379318F2E33256A4A575BCE /* Pods_Wishlist.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -129,6 +142,7 @@
 			isa = PBXGroup;
 			children = (
 				0A482AE82341407E003FB54B /* ArrayExtensions.swift */,
+				0A0C2B352364F32E00D0A059 /* StringExtensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -158,6 +172,7 @@
 				0A4F1B06233D824700546749 /* Wishlist */,
 				0A4F1B05233D824700546749 /* Products */,
 				2788BAEE939734A1E7D4B43A /* Frameworks */,
+				82FF4C42FFDE83C44B72B7D7 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -296,6 +311,7 @@
 		0AAAFC40233FBF9E00059F07 /* Real */ = {
 			isa = PBXGroup;
 			children = (
+				0A97A9082360DAB700A79D06 /* Request.swift */,
 				0AA0C00F235E2B3400DDAAB3 /* LoginProxy.swift */,
 				0AA0C011235E2B3E00DDAAB3 /* SignUpProxy.swift */,
 				0AA0C013235E2B4700DDAAB3 /* SearchProxy.swift */,
@@ -306,10 +322,10 @@
 		0AAAFC41233FC06C00059F07 /* Proxy */ = {
 			isa = PBXGroup;
 			children = (
+				0A6C053F2360D5B800728B81 /* NetworkError.swift */,
 				0AAAFC42233FC07700059F07 /* Protocols */,
 				0AAAFC40233FBF9E00059F07 /* Real */,
 				0AAAFC3F233FBF9A00059F07 /* Mock */,
-				0AAAFC45233FC0CF00059F07 /* NetworkError.swift */,
 				0AA0C00E235E29E700DDAAB3 /* Factory */,
 			);
 			path = Proxy;
@@ -332,6 +348,7 @@
 				0AAAFC4A233FC1AD00059F07 /* User.swift */,
 				0AAAFC4E23403DCD00059F07 /* Item.swift */,
 				0A482AE523411CDD003FB54B /* Wishlist.swift */,
+				0A0C2B302364EDDD00D0A059 /* SearchResponse.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -339,8 +356,18 @@
 		2788BAEE939734A1E7D4B43A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D63A7F4B69FB4D6CF3D91B12 /* Pods_Wishlist.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		82FF4C42FFDE83C44B72B7D7 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				597BEBDADA30DCA8E1FBDDDE /* Pods-Wishlist.debug.xcconfig */,
+				0E91F7E1377140C1BCF75A51 /* Pods-Wishlist.release.xcconfig */,
+			);
+			path = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -350,15 +377,20 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0A4F1B18233D824700546749 /* Build configuration list for PBXNativeTarget "Wishlist" */;
 			buildPhases = (
+				FDBAF0E08F0E868970371E10 /* [CP] Check Pods Manifest.lock */,
 				0A4F1B00233D824700546749 /* Sources */,
 				0A4F1B01233D824700546749 /* Frameworks */,
 				0A4F1B02233D824700546749 /* Resources */,
+				6203793E7F94F13F61069680 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = Wishlist;
+			packageProductDependencies = (
+				0A0C2B332364F2E000D0A059 /* URLImage */,
+			);
 			productName = Wishlist;
 			productReference = 0A4F1B04233D824700546749 /* Wishlist.app */;
 			productType = "com.apple.product-type.application";
@@ -387,6 +419,9 @@
 				Base,
 			);
 			mainGroup = 0A4F1AFB233D824700546749;
+			packageReferences = (
+				0A0C2B322364F2E000D0A059 /* XCRemoteSwiftPackageReference "url-image" */,
+			);
 			productRefGroup = 0A4F1B05233D824700546749 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -410,6 +445,48 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		6203793E7F94F13F61069680 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Wishlist/Pods-Wishlist-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Wishlist/Pods-Wishlist-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Wishlist/Pods-Wishlist-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FDBAF0E08F0E868970371E10 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Wishlist-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		0A4F1B00233D824700546749 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -419,7 +496,6 @@
 				0AA0C009235E1A2A00DDAAB3 /* ProxyFactoryProtocol.swift in Sources */,
 				0A4719B6234F895300EA0C04 /* SearchViewModel.swift in Sources */,
 				0A4F1B08233D824700546749 /* AppDelegate.swift in Sources */,
-				0AAAFC46233FC0CF00059F07 /* NetworkError.swift in Sources */,
 				0AAAFC44233FC09400059F07 /* Login.swift in Sources */,
 				0AAAFC4D233FC21100059F07 /* MockData.swift in Sources */,
 				0A482AE223405021003FB54B /* YourWishlistView.swift in Sources */,
@@ -436,11 +512,13 @@
 				0AAAFC3B233FBA9200059F07 /* LoginService.swift in Sources */,
 				0A4719BA234F9E6600EA0C04 /* Search.swift in Sources */,
 				0A482AE92341407E003FB54B /* ArrayExtensions.swift in Sources */,
+				0A0C2B312364EDDD00D0A059 /* SearchResponse.swift in Sources */,
 				0AAAFC48233FC10E00059F07 /* MockLoginProxy.swift in Sources */,
 				0AAAFC4F23403DCD00059F07 /* Item.swift in Sources */,
 				0AAAFC55234040AB00059F07 /* CreateItemService.swift in Sources */,
 				0ADC977E2351102E0053FB4B /* SideMenu.swift in Sources */,
 				0A0118242343C62C00AEC9FE /* AssetFonts.swift in Sources */,
+				0A6C05402360D5B800728B81 /* NetworkError.swift in Sources */,
 				0A482AF62342B440003FB54B /* AuthFormView.swift in Sources */,
 				0A482AFE2342B581003FB54B /* SignUpState.swift in Sources */,
 				0A4F1B0A233D824700546749 /* SceneDelegate.swift in Sources */,
@@ -452,12 +530,14 @@
 				0A482AE023404F74003FB54B /* BottomFab.swift in Sources */,
 				0AA0C012235E2B3E00DDAAB3 /* SignUpProxy.swift in Sources */,
 				0A482AFC2342B56F003FB54B /* LoginState.swift in Sources */,
+				0A97A9092360DAB700A79D06 /* Request.swift in Sources */,
 				0AAAFC32233FB4BB00059F07 /* AssetColors.swift in Sources */,
 				0A4719BC234F9E9D00EA0C04 /* MockSearchProxy.swift in Sources */,
 				0AA0C00D235E1B5D00DDAAB3 /* MockProxyFactory.swift in Sources */,
 				0A0118282343F72A00AEC9FE /* MockSignUpProxy.swift in Sources */,
 				0AAAFC5123403F1100059F07 /* CreateItem.swift in Sources */,
 				0A482AFA2342B527003FB54B /* AuthState.swift in Sources */,
+				0A0C2B362364F32E00D0A059 /* StringExtensions.swift in Sources */,
 				0A0118262343F46F00AEC9FE /* SignUp.swift in Sources */,
 				0A4F1B0C233D824700546749 /* HomeView.swift in Sources */,
 				0A9E91BB233E95BD0077CF5C /* GridItemView.swift in Sources */,
@@ -594,6 +674,7 @@
 		};
 		0A4F1B19233D824700546749 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 597BEBDADA30DCA8E1FBDDDE /* Pods-Wishlist.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -614,6 +695,7 @@
 		};
 		0A4F1B1A233D824700546749 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0E91F7E1377140C1BCF75A51 /* Pods-Wishlist.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -654,6 +736,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		0A0C2B322364F2E000D0A059 /* XCRemoteSwiftPackageReference "url-image" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/dmytro-anokhin/url-image";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.9.8;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		0A0C2B332364F2E000D0A059 /* URLImage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 0A0C2B322364F2E000D0A059 /* XCRemoteSwiftPackageReference "url-image" */;
+			productName = URLImage;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 0A4F1AFC233D824700546749 /* Project object */;
 }

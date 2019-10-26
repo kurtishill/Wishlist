@@ -24,7 +24,7 @@ class SearchViewModel: ObservableObject, GridViewSelectDelegate {
     }
     
     func search(for keyword: String) {
-        if !keyword.isEmpty {
+//        if !keyword.isEmpty {
         
             self.searchBarError = false
             self.isLoading = true
@@ -43,9 +43,9 @@ class SearchViewModel: ObservableObject, GridViewSelectDelegate {
                         }
                     }
             }
-        } else {
-            self.searchBarError = true
-        }
+//        } else {
+//            self.searchBarError = true
+//        }
     }
     
     func favoriteTapped(for item: Item) {

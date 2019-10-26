@@ -9,9 +9,10 @@
 import Foundation
 
 class MockSearchProxy: SearchProxyProtocol {
-    func search(keyword: String) throws -> [Item] {
+    func search(keyword: String) -> SearchResponse {
         let s = DispatchSemaphore(value: 0)
         _ = s.wait(timeout: .now() + 1.0)
-        return MockData.items.mockItems()
+        let searchResponse = SearchResponse(searchResults: MockData.items.mockItems())
+        return searchResponse
     }
 }
