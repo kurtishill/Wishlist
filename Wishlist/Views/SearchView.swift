@@ -64,6 +64,9 @@ struct SearchView: View {
             
         }.padding(.all, 10)
             .edgesIgnoringSafeArea(.all)
+            .onAppear {
+                self.searchVM.search(for: "")
+        }
     }
 }
 

@@ -9,5 +9,5 @@
 import Foundation
 
 protocol SearchProxyProtocol {
-    func search(keyword: String) throws -> [Item]
+    func search(keyword: String) throws -> SearchResponse
 }

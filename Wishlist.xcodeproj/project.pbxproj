@@ -3,13 +3,16 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		0A0118242343C62C00AEC9FE /* AssetFonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A0118232343C62C00AEC9FE /* AssetFonts.swift */; };
 		0A0118262343F46F00AEC9FE /* SignUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A0118252343F46F00AEC9FE /* SignUp.swift */; };
 		0A0118282343F72A00AEC9FE /* MockSignUpProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A0118272343F72A00AEC9FE /* MockSignUpProxy.swift */; };
+		0A0C2B312364EDDD00D0A059 /* SearchResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A0C2B302364EDDD00D0A059 /* SearchResponse.swift */; };
+		0A0C2B342364F2E000D0A059 /* URLImage in Frameworks */ = {isa = PBXBuildFile; productRef = 0A0C2B332364F2E000D0A059 /* URLImage */; };
+		0A0C2B362364F32E00D0A059 /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A0C2B352364F32E00D0A059 /* StringExtensions.swift */; };
 		0A4719B4234F7A6B00EA0C04 /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A4719B3234F7A6B00EA0C04 /* SearchView.swift */; };
 		0A4719B6234F895300EA0C04 /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A4719B5234F895300EA0C04 /* SearchViewModel.swift */; };
 		0A4719B8234F8FA100EA0C04 /* SearchService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A4719B7234F8FA100EA0C04 /* SearchService.swift */; };
@@ -65,6 +68,8 @@
 		0A0118232343C62C00AEC9FE /* AssetFonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetFonts.swift; sourceTree = "<group>"; };
 		0A0118252343F46F00AEC9FE /* SignUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUp.swift; sourceTree = "<group>"; };
 		0A0118272343F72A00AEC9FE /* MockSignUpProxy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockSignUpProxy.swift; sourceTree = "<group>"; };
+		0A0C2B302364EDDD00D0A059 /* SearchResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResponse.swift; sourceTree = "<group>"; };
+		0A0C2B352364F32E00D0A059 /* StringExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtensions.swift; sourceTree = "<group>"; };
 		0A4719B3234F7A6B00EA0C04 /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
 		0A4719B5234F895300EA0C04 /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
 		0A4719B7234F8FA100EA0C04 /* SearchService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchService.swift; sourceTree = "<group>"; };
@@ -125,6 +130,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0A0C2B342364F2E000D0A059 /* URLImage in Frameworks */,
 				C379318F2E33256A4A575BCE /* Pods_Wishlist.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -136,6 +142,7 @@
 			isa = PBXGroup;
 			children = (
 				0A482AE82341407E003FB54B /* ArrayExtensions.swift */,
+				0A0C2B352364F32E00D0A059 /* StringExtensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -341,6 +348,7 @@
 				0AAAFC4A233FC1AD00059F07 /* User.swift */,
 				0AAAFC4E23403DCD00059F07 /* Item.swift */,
 				0A482AE523411CDD003FB54B /* Wishlist.swift */,
+				0A0C2B302364EDDD00D0A059 /* SearchResponse.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -380,6 +388,9 @@
 			dependencies = (
 			);
 			name = Wishlist;
+			packageProductDependencies = (
+				0A0C2B332364F2E000D0A059 /* URLImage */,
+			);
 			productName = Wishlist;
 			productReference = 0A4F1B04233D824700546749 /* Wishlist.app */;
 			productType = "com.apple.product-type.application";
@@ -408,6 +419,9 @@
 				Base,
 			);
 			mainGroup = 0A4F1AFB233D824700546749;
+			packageReferences = (
+				0A0C2B322364F2E000D0A059 /* XCRemoteSwiftPackageReference "url-image" */,
+			);
 			productRefGroup = 0A4F1B05233D824700546749 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -498,6 +512,7 @@
 				0AAAFC3B233FBA9200059F07 /* LoginService.swift in Sources */,
 				0A4719BA234F9E6600EA0C04 /* Search.swift in Sources */,
 				0A482AE92341407E003FB54B /* ArrayExtensions.swift in Sources */,
+				0A0C2B312364EDDD00D0A059 /* SearchResponse.swift in Sources */,
 				0AAAFC48233FC10E00059F07 /* MockLoginProxy.swift in Sources */,
 				0AAAFC4F23403DCD00059F07 /* Item.swift in Sources */,
 				0AAAFC55234040AB00059F07 /* CreateItemService.swift in Sources */,
@@ -522,6 +537,7 @@
 				0A0118282343F72A00AEC9FE /* MockSignUpProxy.swift in Sources */,
 				0AAAFC5123403F1100059F07 /* CreateItem.swift in Sources */,
 				0A482AFA2342B527003FB54B /* AuthState.swift in Sources */,
+				0A0C2B362364F32E00D0A059 /* StringExtensions.swift in Sources */,
 				0A0118262343F46F00AEC9FE /* SignUp.swift in Sources */,
 				0A4F1B0C233D824700546749 /* HomeView.swift in Sources */,
 				0A9E91BB233E95BD0077CF5C /* GridItemView.swift in Sources */,
@@ -720,6 +736,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		0A0C2B322364F2E000D0A059 /* XCRemoteSwiftPackageReference "url-image" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/dmytro-anokhin/url-image";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.9.8;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		0A0C2B332364F2E000D0A059 /* URLImage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 0A0C2B322364F2E000D0A059 /* XCRemoteSwiftPackageReference "url-image" */;
+			productName = URLImage;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 0A4F1AFC233D824700546749 /* Project object */;
 }

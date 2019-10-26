@@ -7,6 +7,7 @@
 //
 
 import SwiftUI
+import URLImage
 
 let priceFormatter: NumberFormatter = {
     let nf = NumberFormatter()
@@ -63,15 +64,16 @@ struct GridItemView<T: GridViewSelectDelegate>: View {
                     
                     Spacer()
                     
-                    Image(systemName: "gift.fill")
-                        .resizable()
-                        .frame(minWidth: 0, maxWidth: geometry.size.width - 80, minHeight: 0, maxHeight: geometry.size.height - 100)
-                        .foregroundColor(AssetColors.warningColor)
+                    URLImage(
+                        self.item.photo.url,
+                        content: { $0.image
+                            .resizable()
+                    })//.frame(minWidth: 0, maxWidth: geometry.size.width - 80, minHeight: 0, maxHeight: geometry.size.height - 100)
                     
                     HStack {
                         VStack(alignment: .leading) {
                             Spacer()
-                            Text(self.item.name)
+                            Text(self.item.productName)
                                 .font(.custom(AssetsFonts.primaryFont, size: 25))
                                 .foregroundColor(.black)
                                 .minimumScaleFactor(0.8)

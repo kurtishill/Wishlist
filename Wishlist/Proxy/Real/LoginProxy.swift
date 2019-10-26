@@ -11,10 +11,11 @@ import Alamofire
 
 class LoginProxy: LoginProxyProtocol {
     func login(username: String, password: String) throws -> User {
-        return try! Request<User>.send(url: "http://www.google.com",
-                                       method: "post",
-                                       params: ["username": username,
-                                                "password": password]
-        )
+        return User(username: "", name: "", birthdate: "")
+//        return try! Request<User>.send(url: "",
+//                                       method: "post",
+//                                       params: ["username": username,
+//                                                "password": password]
+//        )
     }
 }

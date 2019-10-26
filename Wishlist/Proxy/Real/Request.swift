@@ -27,15 +27,16 @@ class Request<T: Decodable> {
             httpMethod = .post
         }
         
-        AF.request(url, method: httpMethod, parameters: params)
+        AF.request(url, method: httpMethod, parameters: params, encoding: JSONEncoding.default)
             .validate(statusCode: 200..<300)
-            .validate(contentType: ["application/json"])
+//            .validate(contentType: ["application/json"])
             .responseJSON { response in
                 switch response.result {
                 case .success:
                     data = response.data
                 case let .failure(e):
                     error = e
+                    print(e)
                 }
                 semaphore.signal()
         }
