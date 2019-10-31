@@ -11,6 +11,7 @@ import Combine
 
 class SearchViewModel: ObservableObject, GridViewSelectDelegate {
     let searchService: SearchService
+    let addItemsService: AddItemsService
     
     @Published var items: [Item] = []
     @Published var searchErrorMessage: String = ""
@@ -21,31 +22,41 @@ class SearchViewModel: ObservableObject, GridViewSelectDelegate {
     
     init() {
         self.searchService = SearchService()
+        self.addItemsService = AddItemsService()
     }
     
     func search(for keyword: String) {
-//        if !keyword.isEmpty {
+        //        if !keyword.isEmpty {
         
-            self.searchBarError = false
-            self.isLoading = true
-            self.searchErrorMessage = ""
-            self.items = []
-            
-            DispatchQueue.global(qos: .background).async {
-                let items = self.searchService.search(for: keyword)
-                    DispatchQueue.main.async {
-                        self.isLoading = false
-                        if items != nil {
-                            self.items = items!
-                        } else {
-                            self.searchErrorMessage = "No search results found!"
-                            return
-                        }
-                    }
+        self.searchBarError = false
+        self.isLoading = true
+        self.searchErrorMessage = ""
+        self.items = []
+        
+        DispatchQueue.global(qos: .background).async {
+            let items = self.searchService.search(for: keyword)
+            DispatchQueue.main.async {
+                self.isLoading = false
+                if items != nil {
+                    self.items = items!
+                } else {
+                    self.searchErrorMessage = "No search results found!"
+                    return
+                }
             }
-//        } else {
-//            self.searchBarError = true
-//        }
+        }
+        //        } else {
+        //            self.searchBarError = true
+        //        }
+    }
+    
+    func addItems(for list: String) {
+        DispatchQueue.global(qos: .background).async {
+            let _ = self.addItemsService.addItems(items: self.selectedItems, for: list)
+            DispatchQueue.main.async {
+//                self.isLoading = false
+            }
+        }
     }
     
     func favoriteTapped(for item: Item) {

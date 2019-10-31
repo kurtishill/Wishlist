@@ -9,8 +9,8 @@
 import Foundation
 import Alamofire
 
-class Request<T: Decodable> {
-    class func send(url: String, method: String, params: [String : String]? = nil) throws -> T {
+class Request<T: Encodable, U: Decodable> {
+    class func send(url: String, method: String, params: [String: T]? = nil) throws -> U {
         let semaphore = DispatchSemaphore(value: 0)
         
         var data: Data?
@@ -27,7 +27,7 @@ class Request<T: Decodable> {
             httpMethod = .post
         }
         
-        AF.request(url, method: httpMethod, parameters: params, encoding: JSONEncoding.default)
+        AF.request(url, method: httpMethod, parameters: params, encoder: JSONParameterEncoder.default)
             .validate(statusCode: 200..<300)
 //            .validate(contentType: ["application/json"])
             .responseJSON { response in
@@ -53,12 +53,12 @@ class Request<T: Decodable> {
             }
         }
         
-        guard let tData = data else {
+        guard let uData = data else {
             throw NetworkError.other
         }
         
         let decoder = JSONDecoder()
-        let t = try decoder.decode(T.self, from: tData)
+        let t = try decoder.decode(U.self, from: uData)
         
         return t
     }

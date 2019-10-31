@@ -10,6 +10,8 @@ import SwiftUI
 import UIKit
 
 struct SearchView: View {
+    let listId: String
+    
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     
     @ObservedObject var searchVM: SearchViewModel = SearchViewModel()
@@ -25,7 +27,7 @@ struct SearchView: View {
                 Spacer()
                 
                 Button(action: {
-                    // do something with selected items
+                    self.searchVM.addItems(for: self.listId)
                     self.presentationMode.wrappedValue.dismiss()
                 }) {
                     Text("Add")
@@ -90,8 +92,8 @@ struct SearchBar: View {
     }
 }
 
-struct SearchView_Previews: PreviewProvider {
-    static var previews: some View {
-        SearchView()
-    }
-}
+//struct SearchView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        SearchView()
+//    }
+//}

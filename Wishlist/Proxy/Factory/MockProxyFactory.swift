@@ -9,15 +9,7 @@
 import Foundation
 
 class MockProxyFactory: ProxyFactoryProtocol {
-    func createLoginProxy() -> LoginProxyProtocol {
-        return MockLoginProxy()
-    }
-    
-    func createSignUpProxy() -> SignUpProxyProtocol {
-        return MockSignUpProxy()
-    }
-    
-    func createSearchProxy() -> SearchProxyProtocol {
-        return MockSearchProxy()
+    func createServerProxy() -> ProxyProtocol {
+        return MockProxy()
     }
 }

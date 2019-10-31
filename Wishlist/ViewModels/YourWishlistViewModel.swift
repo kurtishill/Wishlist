@@ -11,7 +11,7 @@ import Combine
 
 class YourWishlistViewModel: ObservableObject, GridViewSelectDelegate {
     @Published var isLoadingList: Bool = false
-    @Published var wishlist: [Item] = [Item]()
+    @Published var wishlist: Wishlist = Wishlist(id: "", listName: "", items: [])
     
     func favoriteTapped(for item: Item) {
         

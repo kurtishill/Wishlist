@@ -9,11 +9,11 @@
 import Foundation
 
 class SignUpService {
-    let signUpProxy: SignUpProxyProtocol = ProxyFactory.createSignUpProxy()
+    let proxy: ProxyProtocol = ProxyFactory.createServerProxy()
     
     func signUp(username: String, password: String, name: String, birthdate: String) -> User? {
         do {
-            let user = try signUpProxy.signUp(username: username, password: password, name: name, birthdate: birthdate)
+            let user = try proxy.signUp(username: username, password: password, name: name, birthdate: birthdate)
             return user
         } catch {
             print("Error: ", error)

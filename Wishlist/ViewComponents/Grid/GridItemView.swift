@@ -84,10 +84,10 @@ struct GridItemView<T: GridViewSelectDelegate>: View {
                     }
                     
                     HStack {
-                        VStack(alignment: .leading) {
+                        VStack(alignment: .leading, spacing: 3) {
                             Spacer()
                             Text(self.item.productName)
-                                .font(.custom(AssetsFonts.primaryFont, size: 20))
+                                .font(.custom(AssetsFonts.primaryFont, size: 18))
                                 .foregroundColor(.black)
                                 .minimumScaleFactor(0.8)
                             Text(priceFormatter.string(from: self.item.price as NSNumber)!)
@@ -97,19 +97,8 @@ struct GridItemView<T: GridViewSelectDelegate>: View {
                                 .minimumScaleFactor(0.8)
                             Spacer()
                         }
-                        
-                        Spacer()
-                        
-                        Button(action: {
-                            
-                        }) {
-                            Image(systemName: "info.circle.fill")
-                                .resizable()
-                                .frame(width: 20, height: 20)
-                                .foregroundColor(AssetColors.primaryColor)
-                        }
-                    }.padding(.leading, 15)
-                        .padding(.trailing, 15)
+                    }.padding(.leading, 10)
+                        .padding(.trailing, 10)
                 }
             })
         }.offset(x: 2.5, y: 0)
