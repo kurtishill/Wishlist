@@ -23,6 +23,7 @@ struct GridItemView<T: GridViewSelectDelegate>: View {
     @ObservedObject var gridViewDelegate: T
     
     @State var pulse: Bool = false
+    @State var showWebView: Bool = false
     
     let duration = 0.15
     
@@ -44,65 +45,71 @@ struct GridItemView<T: GridViewSelectDelegate>: View {
                 .animation(.spring())
                 .shadow(color: Color("lightBlue"), radius: 8, x: 0, y: 0)
                 .overlay(
-            GeometryReader { geometry in
-                VStack {
-                    ZStack {
-                        
-                        URLImage(
-                            self.item.photo.url,
-                            placeholder: { _ in
-                                LoadingIndicator()
-                            },
-                            content: { proxy in
-                                proxy.image
-                                    .resizable()
-                                    .cornerRadius(7)
-                                
-                        })
-                        
+                    GeometryReader { geometry in
                         VStack {
-                            HStack {
-                                Spacer()
-                                Image(systemName: self.gridViewDelegate.isItemFavorited(self.item) ? "heart.fill" : "heart")
-                                    .resizable()
-                                    .frame(width: 22, height: 22)
-                                    .scaleEffect(self.pulse ? 1.5 : 1)
-                                    .animation(self.animation)
-                                    .foregroundColor(AssetColors.accentColor)
-                                    .animation(.spring())
-                                    .shadow(radius: 3)
-                                    .onTapGesture {
-                                        self.pulse.toggle()
-                                        _ = self.timer
-                                        self.gridViewDelegate.favoriteTapped(for: self.item)
+                            ZStack {
+                                
+                                URLImage(
+                                    self.item.photo.url,
+                                    placeholder: { _ in
+                                        LoadingIndicator()
+                                },
+                                    content: { proxy in
+                                        proxy.image
+                                            .resizable()
+                                            .cornerRadius(7)
+                                        
+                                })
+                                
+                                VStack {
+                                    HStack {
+                                        Spacer()
+                                        Image(systemName: self.gridViewDelegate.isItemFavorited(self.item) ? "heart.fill" : "heart")
+                                            .resizable()
+                                            .frame(width: 22, height: 22)
+                                            .scaleEffect(self.pulse ? 1.5 : 1)
+                                            .animation(self.animation)
+                                            .foregroundColor(AssetColors.accentColor)
+                                            .animation(.spring())
+                                            .shadow(radius: 3)
+                                            .onTapGesture {
+                                                self.pulse.toggle()
+                                                _ = self.timer
+                                                self.gridViewDelegate.favoriteTapped(for: self.item)
+                                        }
+                                    }.padding(.trailing, 15)
+                                        .padding(.top, 15)
+                                    
+                                    Spacer()
                                 }
-                            }.padding(.trailing, 15)
-                                .padding(.top, 15)
+                            }
                             
-                            Spacer()
+                            HStack {
+                                VStack(alignment: .leading, spacing: 3) {
+                                    Spacer()
+                                    Text(self.item.productName)
+                                        .font(.custom(AssetsFonts.primaryFont, size: 18))
+                                        .foregroundColor(.black)
+                                        .minimumScaleFactor(0.8)
+                                    Text(priceFormatter.string(from: self.item.price as NSNumber)!)
+                                        .font(.custom(AssetsFonts.primaryFont, size: 15))
+                                        .foregroundColor(.gray)
+                                        .animation(.spring())
+                                        .minimumScaleFactor(0.8)
+                                    Spacer()
+                                }
+                            }.padding(.leading, 10)
+                                .padding(.trailing, 10)
                         }
-                    }
-                    
-                    HStack {
-                        VStack(alignment: .leading, spacing: 3) {
-                            Spacer()
-                            Text(self.item.productName)
-                                .font(.custom(AssetsFonts.primaryFont, size: 18))
-                                .foregroundColor(.black)
-                                .minimumScaleFactor(0.8)
-                            Text(priceFormatter.string(from: self.item.price as NSNumber)!)
-                                .font(.custom(AssetsFonts.primaryFont, size: 15))
-                                .foregroundColor(.gray)
-                                .animation(.spring())
-                                .minimumScaleFactor(0.8)
-                            Spacer()
-                        }
-                    }.padding(.leading, 10)
-                        .padding(.trailing, 10)
-                }
-            })
+                })
         }.offset(x: 2.5, y: 0)
             .offset(x: -2.5, y: 0)
+            .onTapGesture {
+                self.showWebView.toggle()
+        }
+        .sheet(isPresented: self.$showWebView) {
+            WebView(url: self.item.url)
+        }
     }
 }
 
