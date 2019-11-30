@@ -12,11 +12,11 @@ class AddItemsService {
     let proxy: ProxyProtocol = ProxyFactory.createServerProxy()
     
     func addItems(items: [Item], for list: String) -> Bool {
-//        let items = items.map { (item: Item) -> Item in
-//            var i = item
-//            i.listId = list
-//            return i
-//        }
+        let items = items.map { (item: Item) -> Item in
+            var i = item
+            i.listID = list
+            return i
+        }
         
         do {
             let success = try proxy.addItems(items: items, for: list)
