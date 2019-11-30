@@ -16,15 +16,7 @@ class ProxyFactory {
         instance = factory
     }
     
-    static func createLoginProxy() -> LoginProxyProtocol {
-        return instance!.createLoginProxy()
-    }
-    
-    static func createSignUpProxy() -> SignUpProxyProtocol {
-        return instance!.createSignUpProxy()
-    }
-    
-    static func createSearchProxy() -> SearchProxyProtocol {
-        return instance!.createSearchProxy()
+    static func createServerProxy() -> ProxyProtocol {
+        return instance!.createServerProxy()
     }
 }

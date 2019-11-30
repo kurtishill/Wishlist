@@ -15,11 +15,11 @@ struct YourWishlistView: View {
     
     var body: some View {
         ZStack {
-            GridView(items: [], gridViewDelegate: self.yourWishlistVM)
+            GridView(items: self.yourWishlistVM.wishlist.items, gridViewDelegate: self.yourWishlistVM)
             BottomFab {
                 self.showSearchView.toggle()
             }.sheet(isPresented: self.$showSearchView) {
-                SearchView()
+                SearchView(listId: self.yourWishlistVM.wishlist.id)
             }
         }
     }

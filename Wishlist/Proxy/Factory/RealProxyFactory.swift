@@ -9,6 +9,7 @@
 import Foundation
 
 class RealProxyFactory: ProxyFactoryProtocol {
+    
     let ip: String
     let port: String
     
@@ -17,17 +18,7 @@ class RealProxyFactory: ProxyFactoryProtocol {
         self.port = port
     }
     
-    func createLoginProxy() -> LoginProxyProtocol {
-        return LoginProxy()
+    func createServerProxy() -> ProxyProtocol {
+        return RealProxy(ip: self.ip, port: self.port)
     }
-    
-    func createSignUpProxy() -> SignUpProxyProtocol {
-        return SignUpProxy()
-    }
-    
-    func createSearchProxy() -> SearchProxyProtocol {
-        return SearchProxy(ip: ip, port: port)
-    }
-    
-    
 }
