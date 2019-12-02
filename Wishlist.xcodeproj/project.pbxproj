@@ -61,6 +61,9 @@
 		0AAAFC55234040AB00059F07 /* CreateItemService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AAAFC54234040AB00059F07 /* CreateItemService.swift */; };
 		0ADC977C2350EC480053FB4B /* AuthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A9E91BC233E96360077CF5C /* AuthView.swift */; };
 		0ADC977E2351102E0053FB4B /* SideMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ADC977D2351102E0053FB4B /* SideMenu.swift */; };
+		B86B1FA8238E0D5100C8C71E /* ShareSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = B86B1FA7238E0D5100C8C71E /* ShareSheet.swift */; };
+		B8EC3C9B2395BFBF00E37AEF /* ShareView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8EC3C9A2395BFBF00E37AEF /* ShareView.swift */; };
+		B8EC3C9D2395C5D200E37AEF /* ShareViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8EC3C9C2395C5D200E37AEF /* ShareViewModel.swift */; };
 		C379318F2E33256A4A575BCE /* Pods_Wishlist.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D63A7F4B69FB4D6CF3D91B12 /* Pods_Wishlist.framework */; };
 /* End PBXBuildFile section */
 
@@ -122,6 +125,9 @@
 		0ADC977D2351102E0053FB4B /* SideMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenu.swift; sourceTree = "<group>"; };
 		0E91F7E1377140C1BCF75A51 /* Pods-Wishlist.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Wishlist.release.xcconfig"; path = "Target Support Files/Pods-Wishlist/Pods-Wishlist.release.xcconfig"; sourceTree = "<group>"; };
 		597BEBDADA30DCA8E1FBDDDE /* Pods-Wishlist.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Wishlist.debug.xcconfig"; path = "Target Support Files/Pods-Wishlist/Pods-Wishlist.debug.xcconfig"; sourceTree = "<group>"; };
+		B86B1FA7238E0D5100C8C71E /* ShareSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareSheet.swift; sourceTree = "<group>"; };
+		B8EC3C9A2395BFBF00E37AEF /* ShareView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareView.swift; sourceTree = "<group>"; };
+		B8EC3C9C2395C5D200E37AEF /* ShareViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareViewModel.swift; sourceTree = "<group>"; };
 		D63A7F4B69FB4D6CF3D91B12 /* Pods_Wishlist.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Wishlist.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -229,6 +235,8 @@
 				0A4F1B0B233D824700546749 /* HomeView.swift */,
 				0A482AE123405021003FB54B /* YourWishlistView.swift */,
 				0A4719B3234F7A6B00EA0C04 /* SearchView.swift */,
+				B86B1FA7238E0D5100C8C71E /* ShareSheet.swift */,
+				B8EC3C9A2395BFBF00E37AEF /* ShareView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -282,6 +290,7 @@
 				0A482AE3234051FD003FB54B /* YourWishlistViewModel.swift */,
 				0A482AF32342B328003FB54B /* AuthViewModel.swift */,
 				0A4719B5234F895300EA0C04 /* SearchViewModel.swift */,
+				B8EC3C9C2395C5D200E37AEF /* ShareViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -498,11 +507,13 @@
 				0A4F1B08233D824700546749 /* AppDelegate.swift in Sources */,
 				0AAAFC44233FC09400059F07 /* Login.swift in Sources */,
 				0AAAFC4D233FC21100059F07 /* MockData.swift in Sources */,
+				B8EC3C9B2395BFBF00E37AEF /* ShareView.swift in Sources */,
 				0A482AE223405021003FB54B /* YourWishlistView.swift in Sources */,
 				0AA0C00B235E1A4400DDAAB3 /* RealProxyFactory.swift in Sources */,
 				0A4719B4234F7A6B00EA0C04 /* SearchView.swift in Sources */,
 				0ADC977C2350EC480053FB4B /* AuthView.swift in Sources */,
 				0AAAFC5323403F8800059F07 /* MockCreateItemProxy.swift in Sources */,
+				B86B1FA8238E0D5100C8C71E /* ShareSheet.swift in Sources */,
 				0A4719B8234F8FA100EA0C04 /* SearchService.swift in Sources */,
 				0AAAFC3D233FBAB200059F07 /* SignUpService.swift in Sources */,
 				0AAAFC4B233FC1AD00059F07 /* User.swift in Sources */,
@@ -512,6 +523,7 @@
 				0AAAFC3B233FBA9200059F07 /* LoginService.swift in Sources */,
 				0A4719BA234F9E6600EA0C04 /* Search.swift in Sources */,
 				0A482AE92341407E003FB54B /* ArrayExtensions.swift in Sources */,
+				B8EC3C9D2395C5D200E37AEF /* ShareViewModel.swift in Sources */,
 				0A0C2B312364EDDD00D0A059 /* SearchResponse.swift in Sources */,
 				0AAAFC48233FC10E00059F07 /* MockLoginProxy.swift in Sources */,
 				0AAAFC4F23403DCD00059F07 /* Item.swift in Sources */,
