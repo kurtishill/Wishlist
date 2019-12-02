@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct Wishlist: Identifiable {
+struct Wishlist: Identifiable, Decodable {
     let id: String
     let listName: String
     let items: [Item]

@@ -11,6 +11,8 @@ import SwiftUI
 struct HomeView: View {
     @State var menuOpen: Bool = false
     
+    @ObservedObject var menuVM: MenuViewModel = MenuViewModel()
+    
     var menuButton: some View {
         Button(action: {
             self.toggleMenu()
@@ -38,7 +40,7 @@ struct HomeView: View {
                     HStack {
                         menuButton
                         Spacer()
-                        Text("Wishlist")
+                        Text(self.menuVM.selectedWishlist?.listName ?? "Wishlist")
                             .font(.custom(AssetsFonts.primaryFont, size: 20))
                         Spacer()
                         shareButton
@@ -47,8 +49,17 @@ struct HomeView: View {
                     Divider()
                         .offset(y: 10)
                 }
-                YourWishlistView()
-                    .frame(minWidth: 0, maxWidth: UIScreen.main.bounds.width, minHeight: 0, maxHeight: UIScreen.main.bounds.height)
+                Group {
+                    if self.menuVM.isSelectedWishlistMine {
+                        MyWishlistView(myWishlistVM: MyWishlistViewModel(wishlist: self.menuVM.selectedWishlist ?? Wishlist(id: "-1", listName: "", items: [])))
+                    } else {
+                        SharedWishlistView(sharedWishlistVM: SharedWishlistViewModel(wishlist: self.menuVM.selectedWishlist ?? Wishlist(id: "-1", listName: "", items: [])))
+                    }
+                }.frame(minWidth: 0,
+                        maxWidth: UIScreen.main.bounds.width,
+                        minHeight: 0,
+                        maxHeight: UIScreen.main.bounds.height
+                )
                     .offset(y: 7.5)
             }.navigationBarHidden(true)
                 .navigationBarBackButtonHidden(true)
@@ -56,7 +67,9 @@ struct HomeView: View {
                 .edgesIgnoringSafeArea(.all)
                 .padding(.top, 20)
             
-            SideMenu(width: UIScreen.main.bounds.width * (3/4), isOpen: self.menuOpen, menuClose: self.toggleMenu)
+            SideMenu(width: UIScreen.main.bounds.width * (3/4), isOpen: self.$menuOpen, menuClose: self.toggleMenu, menuVM: self.menuVM)
+        }.onAppear {
+            self.menuVM.fetchMyWishlists(autoSelect: true)
         }
     }
     

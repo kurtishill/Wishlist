@@ -40,7 +40,11 @@ class RealProxy: ProxyProtocol {
     
     func search(keyword: String) throws -> SearchResponse {
         do {
-            return try Request<String, SearchResponse>.send(url: "http://\(self.ip):\(self.port)/search", method: "post", params: ["searchQuery": keyword])
+            return try Request<String, SearchResponse>.send(
+                url: "http://\(self.ip):\(self.port)/search",
+                method: "post",
+                params: ["searchQuery": keyword]
+            )
         } catch {
             throw error
         }
@@ -48,12 +52,43 @@ class RealProxy: ProxyProtocol {
     
     func addItems(items: [Item], for list: String) throws -> Bool {
         do {
-            let response = try Request<[Item], AddItemsResponse>.send(url: "http://\(self.ip):\(self.port)/addItem", method: "post", params: ["items": items])
+            let response = try Request<[Item], AddItemsResponse>.send(
+                url: "http://\(self.ip):\(self.port)/addItem",
+                method: "post",
+                params: ["items": items]
+            )
             return response.success
         } catch {
             throw error
         }
     }
     
+    func getMyList(_ username: String) throws -> Wishlist {
+        do {
+            let response = try Request<String, WishlistResponse>.send(
+                url: "http://\(self.ip):\(self.port)/getList",
+                method: "post",
+                params: ["username": username]
+            )
+            guard let wishlist = response.wishlists.first else {
+                throw NetworkError.other
+            }
+            return wishlist
+        } catch {
+            throw error
+        }
+    }
     
+    func getSharedLists(_ username: String) throws -> [Wishlist] {
+        do {
+            let response = try Request<String, WishlistResponse>.send(
+                url: "http://\(self.ip):\(self.port)/getSharedLists",
+                method: "post",
+                params: ["username": username]
+            )
+            return response.wishlists
+        } catch {
+            throw error
+        }
+    }
 }

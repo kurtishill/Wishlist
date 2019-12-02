@@ -14,6 +14,7 @@ class LoginService {
     func login(username: String, password: String) -> User? {
         do {
             let user = try proxy.login(username: username, password: password)
+            UserState.instance.authenticate(user: user)
             return user
         } catch {
             print("Error: ", error)
