@@ -10,6 +10,7 @@ import SwiftUI
 
 struct HomeView: View {
     @State var menuOpen: Bool = false
+	@State private var showShareSheet = false
     
     var menuButton: some View {
         Button(action: {
@@ -24,7 +25,7 @@ struct HomeView: View {
     
     var shareButton: some View {
         Button(action: {
-            
+            self.showShareSheet = true
         }) {
             Image(systemName: "square.and.arrow.up")
                 .foregroundColor(.black)
@@ -58,6 +59,14 @@ struct HomeView: View {
             
             SideMenu(width: UIScreen.main.bounds.width * (3/4), isOpen: self.menuOpen, menuClose: self.toggleMenu)
         }
+//		.sheet(isPresented: $showShareSheet) {
+//			ShareSheet(activityItems: [URL(string:"http://www.wishlist.com/myWishlist")])
+//		}
+		.sheet(isPresented: $showShareSheet) {
+			ShareView(onDismiss: {
+				self.showShareSheet = false
+			})
+		}
     }
     
     func toggleMenu() {
