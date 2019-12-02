@@ -8,8 +8,8 @@
 
 import Foundation
 
-struct Wishlist: Identifiable {
-    let id: String = UUID().uuidString
+struct Wishlist: Identifiable, Decodable {
+    let id: String
     let listName: String
     let items: [Item]
 }

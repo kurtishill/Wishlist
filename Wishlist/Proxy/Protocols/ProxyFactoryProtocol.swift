@@ -9,7 +9,5 @@
 import Foundation
 
 protocol ProxyFactoryProtocol {
-    func createLoginProxy() -> LoginProxyProtocol
-    func createSignUpProxy() -> SignUpProxyProtocol
-    func createSearchProxy() -> SearchProxyProtocol
+    func createServerProxy() -> ProxyProtocol
 }

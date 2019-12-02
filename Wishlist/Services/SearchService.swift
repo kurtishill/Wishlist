@@ -9,11 +9,11 @@
 import Foundation
 
 class SearchService {
-    let searchProxy: SearchProxyProtocol = ProxyFactory.createSearchProxy()
+    let proxy: ProxyProtocol = ProxyFactory.createServerProxy()
     
     func search(for keyword: String) -> [Item]? {
         do {
-            let searchResponse: SearchResponse = try searchProxy.search(keyword: keyword)
+            let searchResponse: SearchResponse = try proxy.search(keyword: keyword)
             let items = searchResponse.searchResults
             return items
         } catch {

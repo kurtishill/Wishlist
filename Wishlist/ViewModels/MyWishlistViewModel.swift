@@ -9,9 +9,12 @@
 import Foundation
 import Combine
 
-class YourWishlistViewModel: ObservableObject, GridViewSelectDelegate {
-    @Published var isLoadingList: Bool = false
-    @Published var wishlist: [Item] = [Item]()
+class MyWishlistViewModel: ObservableObject, GridViewSelectDelegate {
+    var wishlist: Wishlist?
+    
+    init(wishlist: Wishlist) {
+        self.wishlist = wishlist
+    }
     
     func favoriteTapped(for item: Item) {
         

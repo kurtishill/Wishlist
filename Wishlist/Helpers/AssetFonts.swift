@@ -10,4 +10,5 @@ import Foundation
 
 class AssetsFonts {
     static let primaryFont = "Montserrat-Medium"
+    static let primaryFontBold = "Montserrat-Bold"
 }
