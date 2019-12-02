@@ -33,4 +33,19 @@ class MockProxy: ProxyProtocol {
         _ = s.wait(timeout: .now() + 1.0)
         return true
     }
+    
+    func getMyList(_ username: String) throws -> Wishlist {
+        let s = DispatchSemaphore(value: 0)
+        _ = s.wait(timeout: .now() + 1.0)
+        return Wishlist(id: "0", listName: "My list", items: [])
+    }
+    
+    func getSharedLists(_ username: String) throws -> [Wishlist] {
+        let s = DispatchSemaphore(value: 0)
+        _ = s.wait(timeout: .now() + 1.0)
+        return [
+            Wishlist(id: "1", listName: "Someone's list 1", items: []),
+            Wishlist(id: "2", listName: "Someone's list 2", items: [])
+        ]
+    }
 }

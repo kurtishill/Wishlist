@@ -14,6 +14,7 @@ class SignUpService {
     func signUp(username: String, password: String, name: String, birthdate: String) -> User? {
         do {
             let user = try proxy.signUp(username: username, password: password, name: name, birthdate: birthdate)
+            UserState.instance.authenticate(user: user)
             return user
         } catch {
             print("Error: ", error)

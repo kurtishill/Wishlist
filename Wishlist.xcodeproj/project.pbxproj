@@ -16,13 +16,20 @@
 		0A0C2B42236B16B200D0A059 /* Proxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A0C2B41236B16B200D0A059 /* Proxy.swift */; };
 		0A0C2B44236B16F300D0A059 /* RealProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A0C2B43236B16F300D0A059 /* RealProxy.swift */; };
 		0A0C2B46236B176A00D0A059 /* MockProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A0C2B45236B176A00D0A059 /* MockProxy.swift */; };
+		0A18D12E2391F90400839F7E /* MenuViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A18D12D2391F90400839F7E /* MenuViewModel.swift */; };
+		0A18D1312391F9A500839F7E /* UserState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A18D1302391F9A500839F7E /* UserState.swift */; };
+		0A18D1332394807F00839F7E /* GetMyWishlistService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A18D1322394807F00839F7E /* GetMyWishlistService.swift */; };
+		0A18D13523949DCA00839F7E /* WishlistResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A18D13423949DCA00839F7E /* WishlistResponse.swift */; };
+		0A18D1392395549400839F7E /* GetSharedWishlistsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A18D1382395549400839F7E /* GetSharedWishlistsService.swift */; };
+		0A18D13B2395682300839F7E /* SharedWishlistViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A18D13A2395682300839F7E /* SharedWishlistViewModel.swift */; };
+		0A18D13D2395686E00839F7E /* SharedWishlistView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A18D13C2395686E00839F7E /* SharedWishlistView.swift */; };
 		0A30258A2391D3A400F235F3 /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A3025892391D3A400F235F3 /* WebView.swift */; };
 		0A4719B4234F7A6B00EA0C04 /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A4719B3234F7A6B00EA0C04 /* SearchView.swift */; };
 		0A4719B6234F895300EA0C04 /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A4719B5234F895300EA0C04 /* SearchViewModel.swift */; };
 		0A4719B8234F8FA100EA0C04 /* SearchService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A4719B7234F8FA100EA0C04 /* SearchService.swift */; };
 		0A482AE023404F74003FB54B /* BottomFab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A482ADF23404F74003FB54B /* BottomFab.swift */; };
-		0A482AE223405021003FB54B /* YourWishlistView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A482AE123405021003FB54B /* YourWishlistView.swift */; };
-		0A482AE4234051FD003FB54B /* YourWishlistViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A482AE3234051FD003FB54B /* YourWishlistViewModel.swift */; };
+		0A482AE223405021003FB54B /* MyWishlistView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A482AE123405021003FB54B /* MyWishlistView.swift */; };
+		0A482AE4234051FD003FB54B /* MyWishlistViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A482AE3234051FD003FB54B /* MyWishlistViewModel.swift */; };
 		0A482AE623411CDD003FB54B /* Wishlist.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A482AE523411CDD003FB54B /* Wishlist.swift */; };
 		0A482AE92341407E003FB54B /* ArrayExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A482AE82341407E003FB54B /* ArrayExtensions.swift */; };
 		0A482AF42342B328003FB54B /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A482AF32342B328003FB54B /* AuthViewModel.swift */; };
@@ -67,13 +74,21 @@
 		0A0C2B41236B16B200D0A059 /* Proxy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Proxy.swift; sourceTree = "<group>"; };
 		0A0C2B43236B16F300D0A059 /* RealProxy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealProxy.swift; sourceTree = "<group>"; };
 		0A0C2B45236B176A00D0A059 /* MockProxy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockProxy.swift; sourceTree = "<group>"; };
+		0A18D12D2391F90400839F7E /* MenuViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewModel.swift; sourceTree = "<group>"; };
+		0A18D1302391F9A500839F7E /* UserState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserState.swift; sourceTree = "<group>"; };
+		0A18D1322394807F00839F7E /* GetMyWishlistService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetMyWishlistService.swift; sourceTree = "<group>"; };
+		0A18D13423949DCA00839F7E /* WishlistResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishlistResponse.swift; sourceTree = "<group>"; };
+		0A18D13723954CD500839F7E /* Montserrat-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Bold.ttf"; sourceTree = "<group>"; };
+		0A18D1382395549400839F7E /* GetSharedWishlistsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetSharedWishlistsService.swift; sourceTree = "<group>"; };
+		0A18D13A2395682300839F7E /* SharedWishlistViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedWishlistViewModel.swift; sourceTree = "<group>"; };
+		0A18D13C2395686E00839F7E /* SharedWishlistView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedWishlistView.swift; sourceTree = "<group>"; };
 		0A3025892391D3A400F235F3 /* WebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
 		0A4719B3234F7A6B00EA0C04 /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
 		0A4719B5234F895300EA0C04 /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
 		0A4719B7234F8FA100EA0C04 /* SearchService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchService.swift; sourceTree = "<group>"; };
 		0A482ADF23404F74003FB54B /* BottomFab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomFab.swift; sourceTree = "<group>"; };
-		0A482AE123405021003FB54B /* YourWishlistView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YourWishlistView.swift; sourceTree = "<group>"; };
-		0A482AE3234051FD003FB54B /* YourWishlistViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YourWishlistViewModel.swift; sourceTree = "<group>"; };
+		0A482AE123405021003FB54B /* MyWishlistView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyWishlistView.swift; sourceTree = "<group>"; };
+		0A482AE3234051FD003FB54B /* MyWishlistViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyWishlistViewModel.swift; sourceTree = "<group>"; };
 		0A482AE523411CDD003FB54B /* Wishlist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Wishlist.swift; sourceTree = "<group>"; };
 		0A482AE82341407E003FB54B /* ArrayExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrayExtensions.swift; sourceTree = "<group>"; };
 		0A482AF32342B328003FB54B /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
@@ -126,6 +141,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0A18D12F2391F99C00839F7E /* State */ = {
+			isa = PBXGroup;
+			children = (
+				0A18D1302391F9A500839F7E /* UserState.swift */,
+			);
+			path = State;
+			sourceTree = "<group>";
+		};
 		0A482AE723414072003FB54B /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -175,6 +198,7 @@
 		0A4F1B06233D824700546749 /* Wishlist */ = {
 			isa = PBXGroup;
 			children = (
+				0A18D12F2391F99C00839F7E /* State */,
 				0A482AE723414072003FB54B /* Extensions */,
 				0AAAFC49233FC19200059F07 /* Models */,
 				0AAAFC41233FC06C00059F07 /* Proxy */,
@@ -205,6 +229,7 @@
 		0A9E91B5233E48340077CF5C /* fonts */ = {
 			isa = PBXGroup;
 			children = (
+				0A18D13723954CD500839F7E /* Montserrat-Bold.ttf */,
 				0A9E91B6233E48540077CF5C /* Montserrat-Medium.ttf */,
 			);
 			path = fonts;
@@ -215,8 +240,9 @@
 			children = (
 				0A482AEA2342AB8E003FB54B /* Auth */,
 				0A4F1B0B233D824700546749 /* HomeView.swift */,
-				0A482AE123405021003FB54B /* YourWishlistView.swift */,
+				0A482AE123405021003FB54B /* MyWishlistView.swift */,
 				0A4719B3234F7A6B00EA0C04 /* SearchView.swift */,
+				0A18D13C2395686E00839F7E /* SharedWishlistView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -267,9 +293,11 @@
 			isa = PBXGroup;
 			children = (
 				0A482AF82342B519003FB54B /* AuthState */,
-				0A482AE3234051FD003FB54B /* YourWishlistViewModel.swift */,
+				0A482AE3234051FD003FB54B /* MyWishlistViewModel.swift */,
 				0A482AF32342B328003FB54B /* AuthViewModel.swift */,
 				0A4719B5234F895300EA0C04 /* SearchViewModel.swift */,
+				0A18D12D2391F90400839F7E /* MenuViewModel.swift */,
+				0A18D13A2395682300839F7E /* SharedWishlistViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -281,6 +309,8 @@
 				0AAAFC3C233FBAB200059F07 /* SignUpService.swift */,
 				0A4719B7234F8FA100EA0C04 /* SearchService.swift */,
 				0A0C2B39236A4A1500D0A059 /* AddItemsService.swift */,
+				0A18D1322394807F00839F7E /* GetMyWishlistService.swift */,
+				0A18D1382395549400839F7E /* GetSharedWishlistsService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -331,6 +361,7 @@
 				0A482AE523411CDD003FB54B /* Wishlist.swift */,
 				0A0C2B302364EDDD00D0A059 /* SearchResponse.swift */,
 				0A0C2B3F236A5D3800D0A059 /* AddItemsResponse.swift */,
+				0A18D13423949DCA00839F7E /* WishlistResponse.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -474,17 +505,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0A482AE4234051FD003FB54B /* YourWishlistViewModel.swift in Sources */,
+				0A482AE4234051FD003FB54B /* MyWishlistViewModel.swift in Sources */,
 				0AA0C009235E1A2A00DDAAB3 /* ProxyFactoryProtocol.swift in Sources */,
+				0A18D13523949DCA00839F7E /* WishlistResponse.swift in Sources */,
 				0A4719B6234F895300EA0C04 /* SearchViewModel.swift in Sources */,
 				0A4F1B08233D824700546749 /* AppDelegate.swift in Sources */,
 				0AAAFC4D233FC21100059F07 /* MockData.swift in Sources */,
-				0A482AE223405021003FB54B /* YourWishlistView.swift in Sources */,
+				0A482AE223405021003FB54B /* MyWishlistView.swift in Sources */,
 				0AA0C00B235E1A4400DDAAB3 /* RealProxyFactory.swift in Sources */,
 				0A4719B4234F7A6B00EA0C04 /* SearchView.swift in Sources */,
 				0ADC977C2350EC480053FB4B /* AuthView.swift in Sources */,
 				0A0C2B42236B16B200D0A059 /* Proxy.swift in Sources */,
 				0A4719B8234F8FA100EA0C04 /* SearchService.swift in Sources */,
+				0A18D1392395549400839F7E /* GetSharedWishlistsService.swift in Sources */,
 				0AAAFC3D233FBAB200059F07 /* SignUpService.swift in Sources */,
 				0AAAFC4B233FC1AD00059F07 /* User.swift in Sources */,
 				0A9E91BF233F02B00077CF5C /* Circles.swift in Sources */,
@@ -501,6 +534,8 @@
 				0A30258A2391D3A400F235F3 /* WebView.swift in Sources */,
 				0A6C05402360D5B800728B81 /* NetworkError.swift in Sources */,
 				0A482AF62342B440003FB54B /* AuthFormView.swift in Sources */,
+				0A18D1332394807F00839F7E /* GetMyWishlistService.swift in Sources */,
+				0A18D12E2391F90400839F7E /* MenuViewModel.swift in Sources */,
 				0A0C2B3A236A4A1500D0A059 /* AddItemsService.swift in Sources */,
 				0A482AFE2342B581003FB54B /* SignUpState.swift in Sources */,
 				0A4F1B0A233D824700546749 /* SceneDelegate.swift in Sources */,
@@ -509,12 +544,15 @@
 				0A482AF42342B328003FB54B /* AuthViewModel.swift in Sources */,
 				0AAAFC2F233FB19900059F07 /* LoadingIndicator.swift in Sources */,
 				0A482AE023404F74003FB54B /* BottomFab.swift in Sources */,
+				0A18D1312391F9A500839F7E /* UserState.swift in Sources */,
 				0A482AFC2342B56F003FB54B /* LoginState.swift in Sources */,
 				0A97A9092360DAB700A79D06 /* Request.swift in Sources */,
 				0AAAFC32233FB4BB00059F07 /* AssetColors.swift in Sources */,
 				0AA0C00D235E1B5D00DDAAB3 /* MockProxyFactory.swift in Sources */,
 				0A482AFA2342B527003FB54B /* AuthState.swift in Sources */,
 				0A0C2B362364F32E00D0A059 /* StringExtensions.swift in Sources */,
+				0A18D13D2395686E00839F7E /* SharedWishlistView.swift in Sources */,
+				0A18D13B2395682300839F7E /* SharedWishlistViewModel.swift in Sources */,
 				0A4F1B0C233D824700546749 /* HomeView.swift in Sources */,
 				0A9E91BB233E95BD0077CF5C /* GridItemView.swift in Sources */,
 			);

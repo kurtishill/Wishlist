@@ -8,18 +8,18 @@
 
 import SwiftUI
 
-struct YourWishlistView: View {
-    @ObservedObject var yourWishlistVM: YourWishlistViewModel = YourWishlistViewModel()
+struct MyWishlistView: View {
+    @ObservedObject var myWishlistVM: MyWishlistViewModel
     
     @State var showSearchView: Bool = false
     
     var body: some View {
         ZStack {
-            GridView(items: self.yourWishlistVM.wishlist.items, gridViewDelegate: self.yourWishlistVM)
+            GridView(items: self.myWishlistVM.wishlist!.items, gridViewDelegate: self.myWishlistVM)
             BottomFab {
                 self.showSearchView.toggle()
             }.sheet(isPresented: self.$showSearchView) {
-                SearchView(listId: self.yourWishlistVM.wishlist.id)
+                SearchView(listId: self.myWishlistVM.wishlist!.id)
             }
         }
     }
