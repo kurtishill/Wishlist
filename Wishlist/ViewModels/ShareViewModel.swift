@@ -9,8 +9,15 @@
 import Foundation
 
 class ShareViewModel: ObservableObject {
+    
+    private let shareService = ShareService()
+    
+    private let userState: UserState = UserState.instance
 
-	func share(with userName: String) {
-		print("in the sharing \(userName)")
+    func share(_ wishlist: String, with userName: String) {
+        guard let owner = userState.user?.username else { return }
+        DispatchQueue.global(qos: .background).async {
+            let _ = self.shareService.share(wishlist, with: userName, owner: owner)
+        }
 	}
 }

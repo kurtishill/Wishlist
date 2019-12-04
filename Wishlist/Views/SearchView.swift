@@ -18,6 +18,8 @@ struct SearchView: View {
     
     @State var searchableString: String = ""
     
+    @Binding var listNeedsRefresh: Bool
+    
     var body: some View {
         VStack(alignment: .leading) {
             HStack {
@@ -28,6 +30,7 @@ struct SearchView: View {
                 
                 Button(action: {
                     self.searchVM.addItems(for: self.listId)
+                    self.listNeedsRefresh = true
                     self.presentationMode.wrappedValue.dismiss()
                 }) {
                     Text("Add")

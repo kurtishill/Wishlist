@@ -11,6 +11,15 @@ import SwiftUI
 struct HomeView: View {
     @State var menuOpen: Bool = false
 	@State private var showShareSheet = false
+    @State var listNeedsRefesh: Bool = false {
+        willSet {
+            if newValue {
+                let s = DispatchSemaphore(value: 0)
+                _ = s.wait(timeout: .now() + 0.5)
+                self.menuVM.fetchMyWishlists()
+            }
+        }
+    }
     
     @ObservedObject var menuVM: MenuViewModel = MenuViewModel()
     
@@ -27,10 +36,12 @@ struct HomeView: View {
     
     var shareButton: some View {
         Button(action: {
-            self.showShareSheet = true
+            if self.menuVM.selectedWishlist != nil && self.menuVM.isSelectedWishlistMine {
+                self.showShareSheet = true
+            }
         }) {
             Image(systemName: "square.and.arrow.up")
-                .foregroundColor(.black)
+                .foregroundColor(self.menuVM.selectedWishlist != nil && self.menuVM.isSelectedWishlistMine ? .black : .gray)
         }
     }
     
@@ -52,7 +63,7 @@ struct HomeView: View {
                 }
                 Group {
                     if self.menuVM.isSelectedWishlistMine {
-                        MyWishlistView(myWishlistVM: MyWishlistViewModel(wishlist: self.menuVM.selectedWishlist ?? Wishlist(id: "-1", listName: "", items: [])))
+                        MyWishlistView(myWishlistVM: MyWishlistViewModel(wishlist: self.menuVM.selectedWishlist ?? Wishlist(id: "-1", listName: "", items: [])), listNeedsRefresh: self.$listNeedsRefesh)
                     } else {
                         SharedWishlistView(sharedWishlistVM: SharedWishlistViewModel(wishlist: self.menuVM.selectedWishlist ?? Wishlist(id: "-1", listName: "", items: [])))
                     }
@@ -72,13 +83,10 @@ struct HomeView: View {
         }.onAppear {
             self.menuVM.fetchMyWishlists(autoSelect: true)
         }
-//		.sheet(isPresented: $showShareSheet) {
-//			ShareSheet(activityItems: [URL(string:"http://www.wishlist.com/myWishlist")])
-//		}
-		.sheet(isPresented: $showShareSheet) {
-			ShareView(onDismiss: {
-				self.showShareSheet = false
-			})
+        .sheet(isPresented: self.$showShareSheet) {
+            ShareView(onDismiss: {
+                self.showShareSheet = false
+            }, wishlist: self.menuVM.selectedWishlist!)
 		}
     }
     

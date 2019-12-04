@@ -23,6 +23,11 @@ class MenuViewModel: ObservableObject {
     
     let userState: UserState = UserState.instance
     
+    func fetchAllLists() {
+        fetchMyWishlists()
+        fetchSharedWishlists()
+    }
+    
     func fetchMyWishlists(autoSelect: Bool = false) {
         guard let username = userState.user?.name else { return }
         

@@ -18,23 +18,37 @@ class RealProxy: ProxyProtocol {
     }
     
     func login(username: String, password: String) throws -> User {
-        return User(username: "", name: "", birthdate: "")
-//        return try! Request<User>.send(url: "",
-//                                       method: "post",
-//                                       params: ["username": username,
-//                                                "password": password]
-//        )
+//        return User(username: "", name: "", birthdate: "")
+        let response = try! Request<String, AuthResponse>.send(url: "http://\(self.ip):\(self.port)/login",
+                                       method: "post",
+                                       params: ["username": username,
+                                                "password": password]
+        )
+        
+        if response.success {
+            let user = User(username: username, name: "", birthdate: "")
+            return user
+        } else {
+            throw NetworkError.other
+        }
     }
     
     func signUp(username: String, password: String, name: String, birthdate: String) throws -> User {
-        return User(username: "", name: "", birthdate: "")
-//        return try! Request<User>.send(url: "http://www.google.com",
-//                                       method: "post",
-//                                       params: ["username": username,
-//                                                "password": password,
-//                                                "name": name,
-//                                                "birthdate": birthdate]
-//        )
+//        return User(username: "", name: "", birthdate: "")
+        let response = try! Request<String, AuthResponse>.send(url: "http://\(self.ip):\(self.port)/register",
+                                       method: "post",
+                                       params: ["username": username,
+                                                "password": password,
+                                                "name": name,
+                                                "birthday": birthdate]
+        )
+        
+        if response.success {
+            let user = User(username: username, name: name, birthdate: birthdate)
+            return user
+        } else {
+            throw NetworkError.other
+        }
         
     }
     
@@ -87,6 +101,21 @@ class RealProxy: ProxyProtocol {
                 params: ["username": username]
             )
             return response.wishlists
+        } catch {
+            throw error
+        }
+    }
+    
+    func share(_ wishlist: String, with username: String, owner: String) throws -> Bool {
+        do {
+            let response = try Request<String, ShareResponse>.send(
+                url: "http://\(self.ip):\(self.port)/share",
+                method: "post", params: [
+                    "wishlistId": wishlist,
+                    "sharedUsername": username,
+                    "owner": owner
+            ])
+            return response.success
         } catch {
             throw error
         }

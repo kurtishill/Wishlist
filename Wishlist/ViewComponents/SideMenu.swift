@@ -37,8 +37,7 @@ struct SideMenu: View {
                 Spacer()
             }
         }.onAppear {
-            self.menuVM.fetchMyWishlists()
-            self.menuVM.fetchSharedWishlists()
+            self.menuVM.fetchAllLists()
         }
     }
 }
@@ -49,22 +48,33 @@ struct MenuContent: View {
     var body: some View {
         VStack(spacing: 7) {
             HStack {
+                Spacer()
+                Button(action: {
+                    self.menuVM.fetchAllLists()
+                }) {
+                    Text("Refresh")
+                        .font(.custom(AssetsFonts.primaryFont, size: 15))
+                        .foregroundColor(AssetColors.accentColor)
+                }
+            }
+            HStack {
                 Text("Your Lists")
                     .font(.custom(AssetsFonts.primaryFont, size: 20))
                 Spacer()
             }
             Divider()
             if self.menuVM.myWishlistLoading {
-                LoadingIndicator()
+                Text("Refreshing...")
+                    .font(.custom(AssetsFonts.primaryFont, size: 17))
             } else {
                 ForEach(self.menuVM.myWishlists) { (wishlist: Wishlist) in
                     HStack {
                         Text(wishlist.listName)
                             .font(.custom(AssetsFonts.primaryFont, size: 17))
                             .foregroundColor(self.menuVM.selectedWishlist?.id == wishlist.id ? .white : .black)
-                            .padding(.leading, 1)
-                            .padding(.top, 2)
-                            .padding(.bottom, 2)
+                            .padding(.leading, 2)
+                            .padding(.top, 4)
+                            .padding(.bottom, 4)
                         Spacer()
                     }.background(self.menuVM.selectedWishlist?.id == wishlist.id ? AssetColors.primaryColor : Color.white)
                         .cornerRadius(5)
@@ -82,16 +92,17 @@ struct MenuContent: View {
                 }
                 Divider()
                 if self.menuVM.sharedWishlistsLoading {
-                    LoadingIndicator()
+                    Text("Refreshing...")
+                        .font(.custom(AssetsFonts.primaryFont, size: 17))
                 } else {
                     ForEach(self.menuVM.sharedWishlists) { (wishlist: Wishlist) in
                         HStack {
                             Text(wishlist.listName)
                                 .font(.custom(AssetsFonts.primaryFont, size: 17))
                                 .foregroundColor(self.menuVM.selectedWishlist?.id == wishlist.id ? .white : .black)
-                                .padding(.leading, 1)
-                                .padding(.top, 2)
-                                .padding(.bottom, 2)
+                                .padding(.leading, 2)
+                                .padding(.top, 4)
+                                .padding(.bottom, 4)
                             Spacer()
                         }.background(self.menuVM.selectedWishlist?.id == wishlist.id ? AssetColors.primaryColor : Color.white)
                             .cornerRadius(5)
