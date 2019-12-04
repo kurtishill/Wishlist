@@ -42,10 +42,16 @@ class MockProxy: ProxyProtocol {
     
     func getSharedLists(_ username: String) throws -> [Wishlist] {
         let s = DispatchSemaphore(value: 0)
-        _ = s.wait(timeout: .now() + 1.0)
+        _ = s.wait(timeout: .now() + 1.2)
         return [
             Wishlist(id: "1", listName: "Someone's list 1", items: []),
             Wishlist(id: "2", listName: "Someone's list 2", items: [])
         ]
+    }
+    
+    func share(_ wishlist: String, with username: String, owner: String) throws -> Bool {
+        let s = DispatchSemaphore(value: 0)
+        _ = s.wait(timeout: .now() + 1.0)
+        return true
     }
 }

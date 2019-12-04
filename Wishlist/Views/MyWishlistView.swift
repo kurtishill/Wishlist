@@ -13,13 +13,15 @@ struct MyWishlistView: View {
     
     @State var showSearchView: Bool = false
     
+    @Binding var listNeedsRefresh: Bool
+    
     var body: some View {
         ZStack {
             GridView(items: self.myWishlistVM.wishlist!.items, gridViewDelegate: self.myWishlistVM)
             BottomFab {
                 self.showSearchView.toggle()
             }.sheet(isPresented: self.$showSearchView) {
-                SearchView(listId: self.myWishlistVM.wishlist!.id)
+                SearchView(listId: self.myWishlistVM.wishlist!.id, listNeedsRefresh: self.$listNeedsRefresh)
             }
         }
     }

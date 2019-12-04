@@ -15,4 +15,5 @@ protocol ProxyProtocol {
     func addItems(items: [Item], for list: String) throws -> Bool
     func getMyList(_ username: String) throws -> Wishlist
     func getSharedLists(_ username: String) throws -> [Wishlist]
+    func share(_ wishlist: String, with username: String, owner: String) throws -> Bool
 }
