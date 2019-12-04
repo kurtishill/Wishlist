@@ -11,7 +11,7 @@ import Foundation
 class UserState: ObservableObject {
     static let instance = UserState()
     
-    @Published var user: User?
+    var user: User?
     
     func authenticate(user: User) {
         self.user = user

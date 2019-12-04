@@ -29,7 +29,7 @@ class MenuViewModel: ObservableObject {
     }
     
     func fetchMyWishlists(autoSelect: Bool = false) {
-        guard let username = userState.user?.name else { return }
+        guard let username = userState.user?.username else { return }
         
         self.myWishlistLoading = true
         

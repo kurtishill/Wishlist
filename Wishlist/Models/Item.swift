@@ -10,7 +10,7 @@ import Foundation
 
 struct Item: Identifiable, Hashable, Codable {
     let id: String
-    var listID: String = "0"
+    var listId: String = "0"
     let productName: String
     let price: Double
     let photo: String

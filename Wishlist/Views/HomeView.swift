@@ -8,9 +8,13 @@
 
 import SwiftUI
 
+enum ModalSelection {
+    case share, search
+}
+
 struct HomeView: View {
     @State var menuOpen: Bool = false
-	@State private var showShareSheet = false
+	@State private var showSheet = false
     @State var listNeedsRefesh: Bool = false {
         willSet {
             if newValue {
@@ -21,7 +25,19 @@ struct HomeView: View {
         }
     }
     
+    @State var modalSelection: ModalSelection = .share
+    
     @ObservedObject var menuVM: MenuViewModel = MenuViewModel()
+    
+    var sheet: some View {
+        if self.modalSelection == .share {
+            return AnyView(ShareView(onDismiss: {
+                self.showSheet = false
+            }, wishlist: self.menuVM.selectedWishlist!))
+        } else {
+            return AnyView(SearchView(listId: self.menuVM.selectedWishlist!.id, listNeedsRefresh: self.$listNeedsRefesh))
+        }
+    }
     
     var menuButton: some View {
         Button(action: {
@@ -37,7 +53,8 @@ struct HomeView: View {
     var shareButton: some View {
         Button(action: {
             if self.menuVM.selectedWishlist != nil && self.menuVM.isSelectedWishlistMine {
-                self.showShareSheet = true
+                self.modalSelection = .share
+                self.showSheet = true
             }
         }) {
             Image(systemName: "square.and.arrow.up")
@@ -63,11 +80,17 @@ struct HomeView: View {
                 }
                 Group {
                     if self.menuVM.isSelectedWishlistMine {
-                        MyWishlistView(myWishlistVM: MyWishlistViewModel(wishlist: self.menuVM.selectedWishlist ?? Wishlist(id: "-1", listName: "", items: [])), listNeedsRefresh: self.$listNeedsRefesh)
+                        Text("")
+                        MyWishlistView(
+                            myWishlistVM: MyWishlistViewModel(wishlist: self.menuVM.selectedWishlist ?? Wishlist(id: "-1", listName: "", items: [])),
+                            showSearchView: self.$showSheet,
+                            modalSelection: self.$modalSelection,
+                            listNeedsRefresh: self.$listNeedsRefesh)
                     } else {
-                        SharedWishlistView(sharedWishlistVM: SharedWishlistViewModel(wishlist: self.menuVM.selectedWishlist ?? Wishlist(id: "-1", listName: "", items: [])))
+                        SharedWishlistView(sharedWishlistVM: SharedWishlistViewModel(wishlist: self.menuVM.selectedWishlist ?? Wishlist(id: "-1", listName: "", items: [Item]())))
                     }
-                }.frame(minWidth: 0,
+                }
+                .frame(minWidth: 0,
                         maxWidth: UIScreen.main.bounds.width,
                         minHeight: 0,
                         maxHeight: UIScreen.main.bounds.height
@@ -82,12 +105,9 @@ struct HomeView: View {
             SideMenu(width: UIScreen.main.bounds.width * (3/4), isOpen: self.$menuOpen, menuClose: self.toggleMenu, menuVM: self.menuVM)
         }.onAppear {
             self.menuVM.fetchMyWishlists(autoSelect: true)
+        }.sheet(isPresented: self.$showSheet) {
+            self.sheet
         }
-        .sheet(isPresented: self.$showShareSheet) {
-            ShareView(onDismiss: {
-                self.showShareSheet = false
-            }, wishlist: self.menuVM.selectedWishlist!)
-		}
     }
     
     func toggleMenu() {

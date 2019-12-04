@@ -22,7 +22,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // Create the SwiftUI view that provides the window contents.
 //        let contentView = ContentView()
 //        ProxyFactory.configure(factory: MockProxyFactory())
-        ProxyFactory.configure(factory: RealProxyFactory(ip: "10.37.99.27", port: "8080"))
+        ProxyFactory.configure(factory: RealProxyFactory(ip: "192.168.252.182", port: "8080"))
         
         let contentView = AuthView()
 

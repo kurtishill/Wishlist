@@ -36,8 +36,9 @@ struct SideMenu: View {
                 
                 Spacer()
             }
-        }.onAppear {
-            self.menuVM.fetchAllLists()
+//        }.onAppear {
+//            self.menuVM.fetchAllLists()
+//        }
         }
     }
 }

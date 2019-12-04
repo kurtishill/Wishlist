@@ -14,7 +14,7 @@ class AddItemsService {
     func addItems(items: [Item], for list: String) -> Bool {
         let items = items.map { (item: Item) -> Item in
             var i = item
-            i.listID = list
+            i.listId = list
             return i
         }
         

@@ -11,15 +11,16 @@ import SwiftUI
 struct MyWishlistView: View {
     @ObservedObject var myWishlistVM: MyWishlistViewModel
     
-    @State var showSearchView: Bool = false
-    
+    @Binding var showSearchView: Bool
+    @Binding var modalSelection: ModalSelection
     @Binding var listNeedsRefresh: Bool
     
     var body: some View {
         ZStack {
             GridView(items: self.myWishlistVM.wishlist!.items, gridViewDelegate: self.myWishlistVM)
             BottomFab {
-                self.showSearchView.toggle()
+                self.modalSelection = .search
+                self.showSearchView = true
             }.sheet(isPresented: self.$showSearchView) {
                 SearchView(listId: self.myWishlistVM.wishlist!.id, listNeedsRefresh: self.$listNeedsRefresh)
             }
