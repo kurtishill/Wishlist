@@ -21,8 +21,6 @@ struct MyWishlistView: View {
             BottomFab {
                 self.modalSelection = .search
                 self.showSearchView = true
-            }.sheet(isPresented: self.$showSearchView) {
-                SearchView(listId: self.myWishlistVM.wishlist!.id, listNeedsRefresh: self.$listNeedsRefresh)
             }
         }
     }

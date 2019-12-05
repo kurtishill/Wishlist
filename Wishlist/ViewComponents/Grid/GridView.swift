@@ -10,7 +10,7 @@ import SwiftUI
 
 struct GridView<T: GridViewSelectDelegate>: View {
     let numColumns: Int = 2
-    let items: [Item]
+    var items: [Item]
     
     var gridViewDelegate: T
     

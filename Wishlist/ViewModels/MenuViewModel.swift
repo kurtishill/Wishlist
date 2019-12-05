@@ -48,7 +48,7 @@ class MenuViewModel: ObservableObject {
     }
     
     func fetchSharedWishlists() {
-        guard let username = userState.user?.name else { return }
+        guard let username = userState.user?.username else { return }
         
         self.sharedWishlistsLoading = true
         
